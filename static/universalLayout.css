@@ -1,0 +1,446 @@
+:root {
+  --color-primary: rgb(70, 70, 70);
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Gilmer Light';
+    src: url('fonts/gilmer-light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    min-height: 100%;
+    background: var(--color-white);
+    font-family: 'Gilmer Light';
+}
+.littleStikyHome {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .littleStikyContainer {
+        position: sticky;
+        top: 10%;
+    }
+}
+@media (min-width: 992px) {
+    .two-steps-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+.fontForDonate{
+    font-size:.675rem;
+}
+
+.zoomed-out {
+  zoom: 2;
+  background-color: transparent;
+}
+.logo {
+  height: 8rem;
+  border-radius: 50px;
+  padding: 5px;
+  animation: logo-fade-in 1s ease-in-out;
+}
+
+.slide-in{
+  animation: text-slide-in 1s ease-out;
+}
+html {
+    scroll-behavior: smooth;
+}
+.title-line {
+    text-align: center;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: var(--color-black) !important;
+  margin-left: 10px;
+  animation: text-slide-in 1s ease-out;
+}
+
+.latImgRel{
+    top: 10%;
+    left : 10%;
+    font-size : 12px;
+    color: var(--color-white) !important;
+}
+
+.latImgInfo{
+    top: 30%;
+    left : 70%;
+    font-size : 12px;
+    color: var(--color-white) !important;
+}
+.latImgTitle{
+    top: 22%;
+    right : 5%;
+    font-size : 12px;
+    color: var(--color-black) !important;
+}
+.nav-link {
+  font-size: 13px;/* nav bar font size */
+  color: var(--color-black) !important;
+  transition: all 0.3s;
+  animation: link-fade-in 0.5s ease-in-out;
+  background: transparent !important;
+}
+.issue-item:not(:first-child) {
+    display: none;
+}
+.upcoming-item:not(:first-child) {
+    display: none;
+}
+
+@media (max-width: 1130px) {
+  .navbar-brand {
+      font-size: 1rem;
+  }
+  .nav-link {
+    font-size: .6rem;
+  }
+}
+
+
+@media (max-width: 767px) {
+    .zoomed-out {
+      zoom: 1.4;
+      background-color: transparent;
+    }
+    .centerTheIndex {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center horizontally */
+    }
+}
+
+/* Custom styles for search and translate */
+.search-translate-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push to the right */
+}
+
+.search-form {
+    font-size: 5px;/* nav bar font size */
+    margin-right: 10px; /* Add space between search and translate */
+}
+
+@media (max-width: 991px) {
+    .search-translate-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left on smaller screens */
+        margin-top: 10px; /* Add space above on smaller screens */
+    }
+
+    .search-form {
+        margin-right: 0;
+        margin-bottom: 5px; /* Add space below search on smaller screens */
+    }
+}
+
+
+.top-nav-sm {
+  padding: 0.25rem 0.5rem; /* Adjust padding for smaller size */
+  font-size: 0.675rem; /* Smaller font size */
+  line-height: 1.5; /* Adjust line height for better proportions */
+  border-radius: 0.2rem; /* Slightly smaller border radius */
+}
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  margin: 0;
+}
+.modal-fullscreen .modal-content {
+  height: 100vh;
+  border: 0;
+  border-radius: 0;
+}
+.search-popup {
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove the border */
+  padding: 0; /* Remove padding */
+}
+
+.search-popup .modal-content {
+  background-color: #fff; /* Set background color for the content */
+  border-radius: 10px; /* Add rounded corners */
+  padding: 20px;
+}
+
+.search-popup .form-control {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.search-popup .btn-close {
+  position: absolute;
+  right: 10px;
+  opacity: 0.5;
+}
+/* Style for search results */
+.search-results {
+    margin-top: 20px;
+}
+
+.search-results h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.search-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search-results li {
+    margin-bottom: 5px;
+}
+
+.search-results a {
+    text-decoration: none;
+    color: white;
+}
+.search-results ul li {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-results ul li a {
+    color`: white !important;
+}`
+/* Style for highlighting search terms */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+  .highlighted-search-result {
+    background-color: rgba(144, 238, 144, 0.5); /* Transparent light green */
+    color: white;
+    text-decoration: white;
+  }
+/* Style for navbar-toggler button */
+.navbar-toggler {
+  margin : 0px;
+  padding : 0px;
+  background-color: var(--color-white); /* Sets background color */
+}
+
+/* Custom style for navbar-toggler-icon with colored bars */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="%23000000" stroke-width="2" d="M5 7h20M5 15h20M5 23h20"/%3E%3C/svg%3E'); /* Example with orange bars (#FF5733) */
+}
+
+.nav-link:hover {
+  color: var(--color-primary) !important;
+  animation: link-hover 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+  background-color: var(--color-white);
+}
+
+.dropdown-item {
+  color: var(--color-black) !important;
+  font-size: 13px;/* nav bar font size */
+}
+
+.dropdown-item:hover {
+  background-color: gray;
+}
+
+/* Remove blue border box on focus */
+.dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Adjust dropdown positioning */
+.dropend .dropdown-menu {
+  margin-left: 0;
+}
+
+.hero {
+  height: calc(100vh - 80px);
+  padding: 20px;
+}
+
+.content-section {
+  margin: 1rem auto;
+  background: var(--color-white);
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  max-width: 1200px;
+}
+
+footer {
+  background: var(--color-white);
+}
+
+footer .fontfooter1, .sizze {
+  font-family: 'Gilmer Light';
+  font-size: 0.6rem;
+}
+
+footer .ankers a {
+  display: block;
+  font-size: 0.8em;
+  margin-bottom: 0.5rem;
+}
+.card-text, .card-title{
+    color: var(--color-black);
+}
+
+
+footer .custom-link {
+  text-decoration: none;
+  color: var(--color-primary);
+  margin: 0 10px; /* Add some margin between the links */
+}
+
+footer .mediaKit {
+  position: relative;
+}
+
+.secondCol{
+    color: var(--color-primary);
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav1 {
+    text-align: center;
+  }
+  .justifyFooter{
+    flex-direction: column;
+    text-align: center;
+  }
+  .justify-content-evenly {
+      justify-content: center!important;
+  }
+  .contactImg{
+    max-width: 25px;
+    margin-right: 5px;
+  }
+}
+.dropend .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
+
+@media (min-width: 992px) {
+    .leftAlignMastheadPic{
+        display: flex;
+        justify-content: center;
+    }
+    .contactImg{
+        max-width: 25px;
+        margin-right: 5px;
+    }
+  .forLagreScreenNav{
+    display:flex;
+    justify-content:space-evenly;
+  }
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-nav1 {
+    display: flex;
+    align-items: center;
+  }
+  .justifyFooter{
+    justify-content: space-between;
+  }
+
+  .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-nav1 .nav-item {
+    display: flex;
+    margin-left: 7px;
+    margin-right: 7px;
+    align-items: center;
+  }
+
+  .justTheBelowOne .nav-item:not(:last-child)::after {
+    content: "|";
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+
+@media (max-width: 768px) {
+    .logo{
+        height: 6rem;
+    }
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+    .logo{
+        height: 4.5rem;
+    }
+  .nav-link {
+    font-size: 14px;
+  }
+  .navbar-brand {
+      font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 435px) {
+    .logo{
+        height: 4rem;
+    }
+  .navbar-brand {
+    font-size : .6rem;
+  }
+  .latImgInfo{
+    font-size : 7px;
+  }
+  .latImgRel{
+    font-size : 7px;
+  }
+  .latImgTitle{
+    right : 10%;
+    top : 15%;
+    font-size : 7px;
+  }
+}
+.issue-post{
+  object-fit: contain;/* none instead... for not to scale the image as per the circumstances...*/
+  object-position: center;
+  width: 100%;
+  max-height: 20rem;
+}
+
+/* Animations */
+@keyframes logo-fade
