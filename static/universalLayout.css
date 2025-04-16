@@ -46,7 +46,8 @@ body {
 }
 .logo {
   height: 8rem;
-  weight: auto;
+  border-radius: 50px;
+  padding: 5px;
   animation: logo-fade-in 1s ease-in-out;
 }
 
@@ -403,18 +404,54 @@ footer .mediaKit {
 
 @media (max-width: 576px) {
     .logo{
-        height: 4.5rem;
+        height: 4.8rem;
     }
   .nav-link {
     font-size: 14px;
   }
   .navbar-brand {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+    .logo{
+        height: 4.5rem;
+    }
+  .navbar-brand {
       font-size: 1rem;
   }
 }
 
+@media (max-width: 440px) {
+    .logo{
+        height: 4.5rem;
+    }
+  .navbar-brand {
+      font-size: .9rem;
+  }
+}
 
-@media (max-width: 435px) {
+@media (max-width: 400px) {
+    .logo{
+        height: 4.4rem;
+    }
+  .navbar-brand {
+      font-size: .8rem;
+  }
+}
+
+@media (max-width: 380px) {
+    .logo{
+        height: 4.3rem;
+    }
+  .navbar-brand {
+      font-size: .745rem;
+  }
+}
+
+
+@media (max-width: 340px) {
     .logo{
         height: 4rem;
     }
@@ -438,6 +475,30 @@ footer .mediaKit {
   object-position: center;
   width: 100%;
   max-height: 20rem;
+}
+/* Initially hide the carousel */
+#issueCarousel, #newsCarousel {
+    display: none;
+}
+
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+    #issue-container, #news-container {
+        display: none; /* Hide the grid/flex container */
+    }
+    #issueCarousel, #newsCarousel{
+        display: block; /* Show the carousel */
+    }
+}
+
+/* Larger screens (768px and up) */
+@media (min-width: 768px) {
+    #issue-container, #news-container {
+        display: flex; /* Or whatever display you're using for the grid */
+    }
+    #issueCarousel, #newsCarousel {
+        display: none; /* Hide the carousel */
+    }
 }
 
 /* Animations */

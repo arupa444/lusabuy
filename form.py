@@ -30,8 +30,10 @@ class LusaContact(FlaskForm):
 
 
 class LusaSubscriber(FlaskForm):
-    email = StringField('Email address',
+    email = StringField('Email address *',
                         validators=[DataRequired(), Email()])
-    name = StringField('Name',
+    name = StringField('Name *',
                         validators=[DataRequired()])
+    message = TextAreaField('Message',
+                           validators=[DataRequired(), Length(min=20)])
     submit = SubmitField('Subscribe')
