@@ -34,7 +34,6 @@ body {
     .two-steps-nav {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
     }
 }
 .fontForDonate{
