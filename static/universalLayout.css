@@ -1,9 +1,11 @@
+
 :root {
   --color-primary: rgb(70, 70, 70);
   --color-white: #ffffff;
   --color-black: #000000;
-}
+  --color-nav: #B5CDF7;
 
+}
 * {
   box-sizing: border-box;
 }
@@ -16,7 +18,6 @@
 
 body {
     min-height: 100%;
-    background: var(--color-white);
     font-family: 'Gilmer Light';
 }
 .littleStikyHome {
@@ -30,11 +31,8 @@ body {
         top: 10%;
     }
 }
-@media (min-width: 992px) {
-    .two-steps-nav {
-        display: flex;
-        flex-direction: column;
-    }
+.footer-and-nav-color{
+    background-color : var(--color-nav) !important
 }
 .fontForDonate{
     font-size:.675rem;
@@ -88,7 +86,7 @@ html {
     color: var(--color-black) !important;
 }
 .nav-link {
-  font-size: 13px;/* nav bar font size */
+  font-size: 1rem;/* nav bar font size */
   color: var(--color-black) !important;
   transition: all 0.3s;
   animation: link-fade-in 0.5s ease-in-out;
@@ -383,8 +381,8 @@ footer .mediaKit {
 
   .justTheBelowOne .nav-item:not(:last-child)::after {
     content: "|";
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
