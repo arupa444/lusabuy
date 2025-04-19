@@ -2,26 +2,35 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to handle sticky header behavior on scroll
     function handleScroll() {
         const navbar = document.querySelector('.navbar');
+        const navbarNav = document.querySelector('#navbarNav');
+        const inviBefore = document.querySelector('.inviBefore');
+        const inviAfter = document.querySelector('.inviAfter');
         if( window.innerWidth > 992 ){
             if (window.scrollY > 50) {
-                navbar.classList.remove('d-flex');
-                navbar.classList.remove('flex-column');
-                navbar.classList.remove('lifeLight')
-                navbar.classList.add('lifeDark')
-            } else {
                 navbar.classList.add('d-flex');
+                navbar.classList.add('justify-content-center');
+                navbar.classList.remove('flex-column');
+                inviBefore.classList.add('d-none');
+                inviAfter.classList.remove('d-none');
+                navbarNav.classList.remove('navbar-collapse');
+                navbarNav.classList.remove('collapse');
+                navbarNav.classList.add('d-flex');
+                navbarNav.classList.add('justify-content-between');
+                navbarNav.classList.add('align-items-center');
+            } else {
+                navbar.classList.remove('d-flex');
+                navbar.classList.remove('justify-content-center');
                 navbar.classList.add('flex-column');
-                navbar.classList.add('lifeLight')
-                navbar.classList.remove('lifeDark')
+                inviBefore.classList.remove('d-none');
+                inviAfter.classList.add('d-none');
+                navbarNav.classList.add('navbar-collapse');
+                navbarNav.classList.add('collapse');
+                navbarNav.classList.remove('d-flex');
+                navbarNav.classList.remove('justify-content-between');
+                navbarNav.classList.remove('align-items-center');
             }
         }else{
-            if (window.scrollY > 50) {
-                navbar.classList.add('d-flex');
-                navbar.classList.add('flex-column');
-            } else {
-                navbar.classList.remove('d-flex');
-                navbar.classList.remove('flex-column');
-            }
+                inviAfter.classList.add('d-none');
         }
     }
     // Attach the scroll event listener
