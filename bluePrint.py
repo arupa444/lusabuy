@@ -43,3 +43,4 @@ def home():
     # collectionArupa = g.db["interviews"]
     # all_collectionArupa = collectionArupa.find()
     return render_template('index.html', title='Home')
+

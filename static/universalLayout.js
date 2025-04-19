@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window.scrollY > 50) {
                 navbar.classList.remove('d-flex');
                 navbar.classList.remove('flex-column');
+                navbar.classList.remove('lifeLight')
+                navbar.classList.add('lifeDark')
             } else {
                 navbar.classList.add('d-flex');
                 navbar.classList.add('flex-column');
+                navbar.classList.add('lifeLight')
+                navbar.classList.remove('lifeDark')
             }
         }else{
             if (window.scrollY > 50) {
