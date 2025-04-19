@@ -11,7 +11,7 @@
 }
 @font-face {
     font-family: 'Gilmer Light';
-    src: url('fonts/gilmer-light.otf') format('opentype');
+    src: url('font/glimmerOfLight.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,7 +19,9 @@
 body {
     min-height: 100%;
     font-family: 'Gilmer Light';
+    background: #F8F9FA;
 }
+
 .littleStikyHome {
     float: left;
     margin-right: 20px;
@@ -380,7 +382,7 @@ footer .mediaKit {
   }
 
   .justTheBelowOne .nav-item:not(:last-child)::after {
-    content: "|";
+    content: "/";
     margin-left: 1rem;
     margin-right: 1rem;
   }
