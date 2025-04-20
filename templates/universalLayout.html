@@ -18,58 +18,73 @@
   {% endblock head %}
 
   <style>
-      .navbar-nav .nav-link {
+        .navbar-nav .nav-link {
             padding: 0.75rem 1rem;
-        }
-
-        .dropdown-menu .dropdown-item {
-            padding: 0.5rem 1rem;
-        }
-
-        /* Multi-Level Dropdown Styling */
-        .dropdown-submenu {
             position: relative;
+            overflow: hidden; /* Prevent underline from overflowing */
         }
 
-        .dropdown-submenu .dropdown-menu {
-            top: 0;
-            left: 100%;
-            margin-top: -1px;
-            border-radius: 0;
-            display: none; /* Hide by default */
+        .navbar-nav .nav-link::before {
+            content: "";
+            position: absolute;
+            bottom: 5px; /* Adjust position */
+            left: 50%; /* Start from the middle */
+            transform: translateX(-50%); /* Center the line */
+            width: 0;
+            height: 2px; /* Adjust thickness */
+            background-color: #007bff; /* Underline color */
+            transition: width 0.3s ease-in-out;
         }
 
-        .dropdown-submenu:hover>.dropdown-menu {
-            display: block; /* Show on hover */
+        .navbar-nav .nav-link:hover::before {
+            width: 100%; /* Expand to full width on hover */
         }
 
-        /* Adjustments for smaller screens */
-        @media (max-width: 991px) {
-            .dropdown-menu .dropdown-submenu .dropdown-menu {
-                left: 0; /* Display below on smaller screens */
-            }
-        }
+    .dropdown-menu .dropdown-item {
+      padding: 0.5rem 1rem;
+    }
 
-        /* Lusabuy theme colors (adjust to your branding) */
-        .navbar {
-            background-color: #ffffff; /* White background */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: #007bff; /* Blue on hover/active */
-        }
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    /* Multi-Level Dropdown Styling */
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+      border-radius: 0;
+      display: none; /* Hide by default */
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+      display: block; /* Show on hover */
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 991px) {
+      .dropdown-menu .dropdown-submenu .dropdown-menu {
+        left: 0; /* Display below on smaller screens */
+      }
+    }
+
+    /* Lusabuy theme colors (adjust to your branding) */
+    .navbar {
+      background-color: #ffffff; /* White background */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
     /* Search Bar Container */
     .searchCover {
       background: white;
       position: relative;
       display: flex;
-      justify-content : center;
+      justify-content: center;
       align-items: center;
       transition: width 0.3s ease, border 0.3s ease;
       border-radius: 50px;
@@ -222,8 +237,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 991px) {
@@ -231,205 +253,213 @@
         width: 100%;
       }
     }
+
     /* Remove arrow from dropdowns */
     .dropdown-toggle::after {
       display: none;
     }
   </style>
 </head>
+
 <body>
   <nav class="sticky-top navbar navbar-expand-lg pb-0 pt-0">
     <a href="{{ url_for('lusaPrint.home') }}" class="inviBefore navbar-brand companyName m-0">
-      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo"/>
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo" />
     </a>
-    <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="#">Our Story</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Ethical Commitment</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Fair Labor Practices</a></li>
+                <li><a class="dropdown-item" href="#">Sustainable Materials</a></li>
+                <li><a class="dropdown-item" href="#">Transparency & Traceability</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    About
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <li><a class="dropdown-item" href="#">Our Story</a></li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Ethical Commitment</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Fair Labor Practices</a></li>
-                            <li><a class="dropdown-item" href="#">Sustainable Materials</a></li>
-                            <li><a class="dropdown-item" href="#">Transparency & Traceability</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Manufacturing Process</a></li>
-                    <li><a class="dropdown-item" href="#">Masthead</a></li>
-                </ul>
+            <li><a class="dropdown-item" href="#">Manufacturing Process</a></li>
+            <li><a class="dropdown-item" href="#">Masthead</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="materialsDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Materials
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="materialsDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Premium Cotton</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Organic Cotton</a></li>
+                <li><a class="dropdown-item" href="#">Recycled Cotton</a></li>
+                <li><a class="dropdown-item" href="#">Cotton Blends</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="materialsDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Materials
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="materialsDropdown">
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Premium Cotton</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Organic Cotton</a></li>
-                            <li><a class="dropdown-item" href="#">Recycled Cotton</a></li>
-                            <li><a class="dropdown-item" href="#">Cotton Blends</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Linen</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">European Linen</a></li>
-                            <li><a class="dropdown-item" href="#">French Linen</a></li>
-                            <li><a class="dropdown-item" href="#">Linen Blends</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Archive</a></li>
-                    <li><a class="dropdown-item" href="#">Fabric Certifications</a></li>
-                </ul>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Linen</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">European Linen</a></li>
+                <li><a class="dropdown-item" href="#">French Linen</a></li>
+                <li><a class="dropdown-item" href="#">Linen Blends</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Services
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Manufacturing Solutions</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cut & Sew</a></li>
-                            <li><a class="dropdown-item" href="#">Private Label</a></li>
-                            <li><a class="dropdown-item" href="#">Custom Design</a></li>
-                            <li><a class="dropdown-item" href="#">Sampling & Prototyping</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Global Sourcing</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Fabric Sourcing</a></li>
-                            <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
-                            <li><a class="dropdown-item" href="#">Vendor Management</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Quality Control</a></li>
-                    <li><a class="dropdown-item" href="#">Logistics & Shipping</a></li>
-                </ul>
+            <li><a class="dropdown-item" href="#">Archive</a></li>
+            <li><a class="dropdown-item" href="#">Fabric Certifications</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Manufacturing Solutions</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cut & Sew</a></li>
+                <li><a class="dropdown-item" href="#">Private Label</a></li>
+                <li><a class="dropdown-item" href="#">Custom Design</a></li>
+                <li><a class="dropdown-item" href="#">Sampling & Prototyping</a></li>
+              </ul>
             </li>
-        </ul>
-
-
-
-
-
-            <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName">
-              <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Company Logo" class="logo"/>
-            </a>
-
-
-
-
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Collections
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Boho Fabrics</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Prints & Patterns</a></li>
-                            <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
-                            <li><a class="dropdown-item" href="#">Color Palettes</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Resort Wear Fabrics</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Lightweight & Breathable</a></li>
-                            <li><a class="dropdown-item" href="#">Drape & Flow</a></li>
-                            <li><a class="dropdown-item" href="#">Water-Friendly Options</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Seasonal Collections</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Summer</a></li>
-                            <li><a class="dropdown-item" href="#">Winter</a></li>
-                            <li><a class="dropdown-item" href="#">Spring</a></li>
-                            <li><a class="dropdown-item" href="#">Autumn</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Global Sourcing</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Fabric Sourcing</a></li>
+                <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
+                <li><a class="dropdown-item" href="#">Vendor Management</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="sustainabilityDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Sustainability
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="sustainabilityDropdown">
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Environmental Impact</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Water Conservation</a></li>
-                            <li><a class="dropdown-item" href="#">Waste Reduction</a></li>
-                            <li><a class="dropdown-item" href="#">Carbon Footprint</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Social Responsibility</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Worker Well-being</a></li>
-                            <li><a class="dropdown-item" href="#">Community Development</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Certifications & Standards</a></li>
-                    <li><a class="dropdown-item" href="#">Our Partners</a></li>
-                </ul>
+            <li><a class="dropdown-item" href="#">Quality Control</a></li>
+            <li><a class="dropdown-item" href="#">Logistics & Shipping</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+
+
+      <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName">
+        <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Company Logo" class="logo" />
+      </a>
+
+
+
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Collections
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Boho Fabrics</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Prints & Patterns</a></li>
+                <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
+                <li><a class="dropdown-item" href="#">Color Palettes</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Blog
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-                    <li><a class="dropdown-item" href="#">Ethical Fashion Trends</a></li>
-                    <li><a class="dropdown-item" href="#">Sustainable Fabric Innovations</a></li>
-                    <li><a class="dropdown-item" href="#">Behind the Scenes at Lusabuy</a></li>
-                    <li><a class="dropdown-item" href="#">Industry News & Insights</a></li>
-                </ul>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Resort Wear Fabrics</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Lightweight & Breathable</a></li>
+                <li><a class="dropdown-item" href="#">Drape & Flow</a></li>
+                <li><a class="dropdown-item" href="#">Water-Friendly Options</a></li>
+              </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Contact Us
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                    <li><a class="dropdown-item" href="#">Request a Quote</a></li>
-                    <li><a class="dropdown-item" href="#">General Inquiries</a></li>
-                    <li><a class="dropdown-item" href="#">Careers</a></li>
-                </ul>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Seasonal Collections</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Summer</a></li>
+                <li><a class="dropdown-item" href="#">Winter</a></li>
+                <li><a class="dropdown-item" href="#">Spring</a></li>
+                <li><a class="dropdown-item" href="#">Autumn</a></li>
+              </ul>
             </li>
-        </ul>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="sustainabilityDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Sustainability
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="sustainabilityDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Environmental Impact</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Water Conservation</a></li>
+                <li><a class="dropdown-item" href="#">Waste Reduction</a></li>
+                <li><a class="dropdown-item" href="#">Carbon Footprint</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Social Responsibility</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Worker Well-being</a></li>
+                <li><a class="dropdown-item" href="#">Community Development</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Certifications & Standards</a></li>
+            <li><a class="dropdown-item" href="#">Our Partners</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Blog
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+            <li><a class="dropdown-item" href="#">Ethical Fashion Trends</a></li>
+            <li><a class="dropdown-item" href="#">Sustainable Fabric Innovations</a></li>
+            <li><a class="dropdown-item" href="#">Behind the Scenes at Lusabuy</a></li>
+            <li><a class="dropdown-item" href="#">Industry News & Insights</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Contact Us
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+            <li><a class="dropdown-item" href="#">Request a Quote</a></li>
+            <li><a class="dropdown-item" href="#">General Inquiries</a></li>
+            <li><a class="dropdown-item" href="#">Careers</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </nav>
+  <div class="d-flex sticky-top justify-content-center pt-2">
+        <a class="fa fa-search text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
+        </a>
+  </div>
+
 
   <div class="container my-5">
     {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
     {% endwith %}
 
     <!-- Search Modal -->
@@ -466,28 +496,35 @@
               </button>
             </a>
           </div>
-          <button type="button" class="subForMob btn btn-outline-dark top-nav-sm p-1 me-3" data-bs-toggle="modal" data-bs-target="#subscribeModal">
+          <button type="button" class="subForMob btn btn-outline-dark top-nav-sm p-1 me-3" data-bs-toggle="modal"
+                  data-bs-target="#subscribeModal">
             Subscribe
           </button>
         </div>
         <div class="d-flex align-items-center social-links">
-          <a href="https://www.facebook.com/thelittlejournalofneindia" class="fa-brands fa-facebook me-2 mb-0 pb-0 text-decoration-none text-dark"></a>
-          <a href="https://www.instagram.com/thelittlejournal.neindia/" class="fa-brands fa-instagram me-2 text-decoration-none text-dark"></a>
+          <a href="https://www.facebook.com/thelittlejournalofneindia"
+             class="fa-brands fa-facebook me-2 mb-0 pb-0 text-decoration-none text-dark"></a>
+          <a href="https://www.instagram.com/thelittlejournal.neindia/"
+             class="fa-brands fa-instagram me-2 text-decoration-none text-dark"></a>
           <a href="https://x.com/TNeindia" class="fa-brands fa-twitter me-2 text-decoration-none text-dark"></a>
-          <a href="https://www.linkedin.com/company/the-little-journal-of-northeast-india/about/" class="fa-brands fa-linkedin text-decoration-none text-dark"></a>
+          <a href="https://www.linkedin.com/company/the-little-journal-of-northeast-india/about/"
+             class="fa-brands fa-linkedin text-decoration-none text-dark"></a>
         </div>
       </div>
     </div>
-    <div class="modal fade shadow" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+    <div class="modal fade shadow" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel"
+         aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="d-flex justify-content-between ms-3 me-3 mt-3 mb-0 pb-0">
             <p class="mb-0" id="subscribeModalLabel">Dear reader,</p>
-            <button type="button" class="btn-close" style="height:.5em; width:.5em;" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" style="height:.5em; width:.5em;" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
           </div>
           <div class="modal-body mt-0 pt-0">
             <img src="#" class="img-fluid mb-3">
-            <p>Sign up for the <i>TLJNE</i> newsletter to receive the latest news on issue releases, calls for submissions, workshops, interviews, and lots more.</p>
+            <p>Sign up for the <i>TLJNE</i> newsletter to receive the latest news on issue releases, calls for
+              submissions, workshops, interviews, and lots more.</p>
             <form action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="7d126f7c-ce83-46a5-9779-991185767211">
               <div class="mb-3">
@@ -512,4 +549,5 @@
   <script src="{{ url_for('static', filename='universalLayout.js') }}">
   </script>
 </body>
+
 </html>

@@ -125,7 +125,12 @@ html {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate-gradient 5s linear infinite;
+  animation: animate-gradient1 5s linear infinite;
+}
+@keyframes animate-gradient1{
+    to{
+    background-position: 200%;
+    }
 }
 
 @media (max-width: 767px) {
