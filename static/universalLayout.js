@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const navbarNav = document.querySelector('#navbarNav');
         const inviBefore = document.querySelector('.inviBefore');
         const inviAfter = document.querySelector('.inviAfter');
+        const navLink = document.querySelectorAll('.nav-link');
+        const searchStick = document.querySelector('.searchStick');
+        const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
         if( window.innerWidth > 992 ){
             if (window.scrollY > 50) {
                 navbar.classList.add('d-flex');
@@ -17,6 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 navbarNav.classList.add('d-flex');
                 navbarNav.classList.add('justify-content-between');
                 navbarNav.classList.add('align-items-center');
+                navbarNav.classList.add('ps-4');
+                searchStick.style.top = "20vh";
+                navLink.forEach((ele)=>{
+                    ele.classList.remove('theColorForLusaNavBefore');
+                    ele.classList.add('theColorForLusaNavAfter');
+                });
             } else {
                 navbar.classList.remove('d-flex');
                 navbar.classList.remove('justify-content-center');
@@ -28,9 +37,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 navbarNav.classList.remove('d-flex');
                 navbarNav.classList.remove('justify-content-between');
                 navbarNav.classList.remove('align-items-center');
+                navbarNav.classList.remove('ps-4');
+                searchStick.style.top = "17vh";
+                navLink.forEach((ele)=>{
+                    ele.classList.add('theColorForLusaNavBefore');
+                    ele.classList.remove('theColorForLusaNavAfter');
+                });
             }
         }else{
+                navLink.forEach((ele)=>{
+                    ele.classList.add('theColorForLusaNavBefore');
+                    ele.classList.remove('theColorForLusaNavAfter');
+                });
                 inviAfter.classList.add('d-none');
+                searchStick.style.top = "10vh";
         }
     }
     // Attach the scroll event listener

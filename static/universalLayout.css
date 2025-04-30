@@ -17,18 +17,20 @@
 }
 @font-face {
     font-family: 'Saglity';
-    src: url('font/CorrectSpelling.otf') format('opentype');
+    src: url('font/finalFont.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face-nav{
     font-family: 'Saglity';
-    src: url('font/CorrectSpelling.otf') format('opentype');
+    src: url('font/finalFont.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
+.searchStick {
+    font-family: 'Saglity';
+}
 body {
     min-height: 100%;
     font-family: '';
@@ -61,8 +63,7 @@ nav{
   background-color: transparent;
 }
 .logo {
-  height: 8rem;
-  border-radius: 50px;
+  height: 14vh;
   padding: 5px;
   animation: logo-fade-in 1s ease-in-out;
 }
@@ -115,12 +116,18 @@ html {
     min-width : 100%;
 }
 
+.theColorForLusaNavBefore{
+    background: linear-gradient(to right,#000000,#000000,#000000,#FFD700,#000000);
+}
+.theColorForLusaNavAfter{
+    background: linear-gradient(to right,#000000,#000000,#000000,#b4201c,#000000);
+}
+
 .nav-link {
-  font-size: 1.1rem;
-  margin-left : 1rem;
-  margin-right : 1rem;
-  color: #13134e;
-  background: linear-gradient(to right,#060718,#181964,#2c2cb0,#3030c1,#060718);
+  font-size: .7rem;
+  margin-left : 1.8rem;
+  margin-right : 1.8rem;
+  color: #000000;
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -182,6 +189,7 @@ html {
   height: 100vh;
   margin: 0;
 }
+
 .modal-fullscreen .modal-content {
   height: 100vh;
   border: 0;
@@ -281,10 +289,9 @@ html {
 }
 
 .hero {
-  height: calc(100vh - 80px);
+  height: calc(400vh - 80px);
   padding: 20px;
 }
-
 .content-section {
   margin: 1rem auto;
   background: var(--color-white);
@@ -326,16 +333,72 @@ footer .mediaKit {
 .secondCol{
     color: var(--color-primary);
 }
-
+.dropdown-menu {
+    background : black;
+}
 .dropdown-item {
   font-size: .7rem;/* nav bar font size */
-  background: linear-gradient(to right,#060718,#181964,#2c2cb0,#3030c1,#060718);
+  background: linear-gradient(to right,#FFFFFF,#FFFFFF,#FFFFFF,#FFD700,#FFFFFF);
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate-gradient 5s linear infinite;
 }
+
+/* From Uiverse.io by vinodjangid07 */
+.searchButton {
+    font-size: .7em;
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: transparent;
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+}
+
+.svgIcon {
+    fill: #FFD700;
+  height: 25px;
+  transition-duration: 1.5s;
+}
+
+.bell path {
+  fill: rgb(19, 19, 19);
+}
+
+.searchButton:hover {
+  background: linear-gradient(to right,#000000,#000000,#000000,#FFD700,#000000);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 5s linear infinite;
+  transition-duration: .5s;
+}
+
+.searchButton:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+
+.searchButton:hover .svgIcon {
+  transform: rotate(250deg);
+  transition-duration: 1.5s;
+}
+
+
 
 @media (max-width: 991px) {
 
@@ -378,15 +441,16 @@ footer .mediaKit {
 
   .navbar-nav1 .nav-item {
     display: flex;
-    margin-left: 7px;
-    margin-right: 7px;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
     align-items: center;
+
   }
 
   .justTheBelowOne .nav-item:not(:last-child)::after {
     content: "|";
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
   }
 }
 

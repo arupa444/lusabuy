@@ -32,7 +32,7 @@
             transform: translateX(-50%); /* Center the line */
             width: 0;
             height: 2px; /* Adjust thickness */
-            background-color: #007bff; /* Underline color */
+            background-color: #000000; /* Underline color */
             transition: width 0.3s ease-in-out;
         }
 
@@ -69,10 +69,6 @@
     }
 
     /* Lusabuy theme colors (adjust to your branding) */
-    .navbar {
-      background-color: #ffffff; /* White background */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
 
     .dropdown-menu {
       border: none;
@@ -263,20 +259,20 @@
 
 <body>
   <nav class="sticky-top navbar navbar-expand-lg pb-0 pt-0">
-    <a href="{{ url_for('lusaPrint.home') }}" class="inviBefore navbar-brand companyName m-0">
-      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo" />
+    <a href="{{ url_for('lusaPrint.home') }}" class="inviBefore navbar-brand companyName m-0 pb-0 pt-0">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo pb-0 mb-0 pt-0 mt-0" />
     </a>
     <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse mt-0 pt-0" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active text-uppercase pt-0" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
              aria-expanded="false">
             About
           </a>
@@ -295,74 +291,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="materialsDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
-            Materials
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="materialsDropdown">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Premium Cotton</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Organic Cotton</a></li>
-                <li><a class="dropdown-item" href="#">Recycled Cotton</a></li>
-                <li><a class="dropdown-item" href="#">Cotton Blends</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Linen</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">European Linen</a></li>
-                <li><a class="dropdown-item" href="#">French Linen</a></li>
-                <li><a class="dropdown-item" href="#">Linen Blends</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Archive</a></li>
-            <li><a class="dropdown-item" href="#">Fabric Certifications</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Manufacturing Solutions</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cut & Sew</a></li>
-                <li><a class="dropdown-item" href="#">Private Label</a></li>
-                <li><a class="dropdown-item" href="#">Custom Design</a></li>
-                <li><a class="dropdown-item" href="#">Sampling & Prototyping</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Global Sourcing</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Fabric Sourcing</a></li>
-                <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
-                <li><a class="dropdown-item" href="#">Vendor Management</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Quality Control</a></li>
-            <li><a class="dropdown-item" href="#">Logistics & Shipping</a></li>
-          </ul>
-        </li>
-      </ul>
-
-
-
-
-
-      <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName">
-        <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Company Logo" class="logo" />
-      </a>
-
-
-
-
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="collectionsDropdown" role="button"
              data-bs-toggle="dropdown" aria-expanded="false">
             Collections
           </a>
@@ -395,7 +324,74 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="sustainabilityDropdown" role="button"
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Manufacturing Solutions</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cut & Sew</a></li>
+                <li><a class="dropdown-item" href="#">Private Label</a></li>
+                <li><a class="dropdown-item" href="#">Custom Design</a></li>
+                <li><a class="dropdown-item" href="#">Sampling & Prototyping</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Global Sourcing</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Fabric Sourcing</a></li>
+                <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
+                <li><a class="dropdown-item" href="#">Vendor Management</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Quality Control</a></li>
+            <li><a class="dropdown-item" href="#">Logistics & Shipping</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+
+
+      <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName ps-5 pe-5">
+        <img src="{{ url_for('static', filename='img/logo1.png') }}" style="height: 20vh" alt="Company Logo" class="logo" />
+      </a>
+
+
+
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="materialsDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Materials
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="materialsDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Premium Cotton</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Organic Cotton</a></li>
+                <li><a class="dropdown-item" href="#">Recycled Cotton</a></li>
+                <li><a class="dropdown-item" href="#">Cotton Blends</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Linen</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">European Linen</a></li>
+                <li><a class="dropdown-item" href="#">French Linen</a></li>
+                <li><a class="dropdown-item" href="#">Linen Blends</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Archive</a></li>
+            <li><a class="dropdown-item" href="#">Fabric Certifications</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="sustainabilityDropdown" role="button"
              data-bs-toggle="dropdown" aria-expanded="false">
             Sustainability
           </a>
@@ -420,7 +416,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
              aria-expanded="false">
             Blog
           </a>
@@ -432,9 +428,9 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown"
              aria-expanded="false">
-            Contact Us
+            Contact
           </a>
           <ul class="dropdown-menu" aria-labelledby="contactDropdown">
             <li><a class="dropdown-item" href="#">Request a Quote</a></li>
@@ -445,8 +441,15 @@
       </ul>
     </div>
   </nav>
-  <div class="d-flex sticky-top justify-content-center pt-2">
-        <a class="fa fa-search text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
+  <div class="d-flex sticky-top searchStick justify-content-center pt-2">
+    <!-- From Uiverse.io by vinodjangid07 -->
+        <a class="text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
+          <button class="searchButton text-uppercase">
+            <svg class="svgIcon" viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+            Explore
+          </button>
         </a>
   </div>
 
@@ -518,19 +521,18 @@
         <div class="modal-content">
           <div class="d-flex justify-content-between ms-3 me-3 mt-3 mb-0 pb-0">
             <p class="mb-0" id="subscribeModalLabel">Dear reader,</p>
-            <button type="button" class="btn-close" style="height:.5em; width:.5em;" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+            <button type="button" class="btn-close" style="height:.5em; width:.5em;" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body mt-0 pt-0">
-            <img src="#" class="img-fluid mb-3">
-            <p>Sign up for the <i>TLJNE</i> newsletter to receive the latest news on issue releases, calls for
-              submissions, workshops, interviews, and lots more.</p>
+            <img src="{{ url_for('static', filename='img/subscribe1.png') }}" class="img-fluid mb-3">
+            <p>Sign up for the <i>Lusabuy</i> newsletter to receive the latest news on inventory, designers updates and about the good deals.</p>
             <form action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="7d126f7c-ce83-46a5-9779-991185767211">
+              <input type="hidden" name="access_key" value="d0810cd5-1525-4f61-9c29-44e758c65778">
               <div class="mb-3">
                 <p>Unsubscribe anytime by clicking the button in the email footer.</p>
                 {{ subForm.email(class="form-control mb-3", placeholder="name@example.com") }}
-                {{ subForm.name(class="form-control", placeholder="Name") }}
+                {{ subForm.name(class="form-control mb-3", placeholder="Name") }}
+                {{ subForm.message(class="form-control", placeholder="Let us know, Why you want to join us?......") }}
               </div>
               <div class="d-flex justify-content-center">
                 {{ subForm.submit(class="btn btn-outline-dark") }}

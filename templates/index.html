@@ -1,12 +1,53 @@
 {% extends "universalLayout.html" %}
 
 {% block content %}
+    <div class="position-absolute top-0 start-0">
+        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
+            <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" type="video/mp4">
+        </video>
+        <div class="d-flex">
+            <video autoplay 100p muted plays-inline loop class=" w-50 lusa-video p-0 m-0" style="z-index: -2;">
+                <source src="{{ url_for('static', filename='vid/lusabuyServices.mp4') }}" type="video/mp4">
+            </video>
+            <video autoplay 100p muted plays-inline loop class=" w-50 lusa-video" style="z-index: -2;">
+                <source src="{{ url_for('static', filename='vid/lusabuyServices.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
+            <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" type="video/mp4">
+        </video>
+        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
+            <source src="{{ url_for('static', filename='vid/lusabuyMaterial.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+
+<!--    <video autoplay 100p muted plays-inline loop class="lusa-video position-absolute align-self-center" style="z-index: -1; height: 80%; top:18%; left: 10%">-->
+<!--        <source src="{{ url_for('static', filename='vid/lusabuyVideo.mp4') }}" type="video/mp4">-->
+<!--    </video>-->
     <!-- Hero Section -->
+<div style="height: calc(40vh);"></div>
     <section class="hero">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center ">
             <h1>Redefining Ethical Fashion</h1>
             <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
-            <a href="#" class="btn btn-primary">Explore Our Materials</a>
+            <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Lusabuy</h2>
+                    <p>Lusabuy is committed to providing high-quality, ethically sourced cotton and linen fabrics to
+                        boho and resort wear brands worldwide. We prioritize sustainability and fair labor practices in
+                        every step of our manufacturing process.</p>
+                </div>
+                <div class="col-md-6 bg-dark">
+                    <img src="https://via.placeholder.com/500x300" alt="Lusabuy Manufacturing" class="img-fluid">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -26,115 +67,21 @@
             </div>
         </div>
     </section>
-
-    <!-- Materials Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2>Our Premium Materials</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Cotton</h3>
-                    <p>We offer a wide range of cotton fabrics, including organic, recycled, and blended options,
-                        perfect for creating comfortable and sustainable clothing.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Linen</h3>
-                    <p>Our linen fabrics are sourced from Europe and France, known for their quality and durability.
-                        Ideal for lightweight and breathable resort wear.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Fabric Certifications</h3>
-                    <p>Explore Our Fabric Certifications. Oeko-Tex, GOTS, GRS</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
+    <!-- About Section -->
     <section class="py-5">
         <div class="container">
-            <h2>Our Services</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Manufacturing Solutions</h3>
-                    <p>From cut & sew to private label and custom design, we offer comprehensive manufacturing
-                        solutions to meet your brand's needs.</p>
+                    <h2>About Lusabuy</h2>
+                    <p>Lusabuy is committed to providing high-quality, ethically sourced cotton and linen fabrics to
+                        boho and resort wear brands worldwide. We prioritize sustainability and fair labor practices in
+                        every step of our manufacturing process.</p>
                 </div>
                 <div class="col-md-6">
-                    <h3>Global Sourcing</h3>
-                    <p>Our global sourcing services include fabric, trim, and accessory sourcing, as well as vendor
-                        management to ensure quality and efficiency.</p>
+                    <img src="https://via.placeholder.com/500x300" alt="Lusabuy Manufacturing" class="img-fluid">
                 </div>
             </div>
         </div>
     </section>
-    <h1>abcsdefghijklmnoqrstuvwxyz</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
-    <h1>HUI HUI</h1>
+
 {% endblock content %}
