@@ -17,7 +17,7 @@
   {% block head %}
   {% endblock head %}
 
-  <style>
+<style>
         .navbar-nav .nav-link {
             padding: 0.75rem 1rem;
             position: relative;
@@ -254,6 +254,14 @@
     .dropdown-toggle::after {
       display: none;
     }
+    @keyframes mymove {
+      from {top: -150px;}
+      to {top: 0;}
+    }
+.justALinearMoment {
+  position: relative; /* Or absolute, fixed, or sticky */
+  animation: mymove 3s;
+}
   </style>
 </head>
 
@@ -276,6 +284,7 @@
              aria-expanded="false">
             About
           </a>
+
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
             <li><a class="dropdown-item" href="#">Our Story</a></li>
             <li class="dropdown-submenu">
@@ -286,42 +295,15 @@
                 <li><a class="dropdown-item" href="#">Transparency & Traceability</a></li>
               </ul>
             </li>
+
             <li><a class="dropdown-item" href="#">Manufacturing Process</a></li>
             <li><a class="dropdown-item" href="#">Masthead</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="collectionsDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#">
             Collections
           </a>
-          <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Boho Fabrics</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Prints & Patterns</a></li>
-                <li><a class="dropdown-item" href="#">Trim & Accessory Sourcing</a></li>
-                <li><a class="dropdown-item" href="#">Color Palettes</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Resort Wear Fabrics</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Lightweight & Breathable</a></li>
-                <li><a class="dropdown-item" href="#">Drape & Flow</a></li>
-                <li><a class="dropdown-item" href="#">Water-Friendly Options</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Seasonal Collections</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Summer</a></li>
-                <li><a class="dropdown-item" href="#">Winter</a></li>
-                <li><a class="dropdown-item" href="#">Spring</a></li>
-                <li><a class="dropdown-item" href="#">Autumn</a></li>
-              </ul>
-            </li>
-          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
@@ -356,7 +338,7 @@
 
 
 
-      <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName ps-5 pe-5">
+      <a href="{{ url_for('lusaPrint.home') }}" class="inviAfter m-0 navbar-brand companyName ps-5 pe-5 justALinearMoment">
         <img src="{{ url_for('static', filename='img/logo1.png') }}" style="height: 20vh" alt="Company Logo" class="logo" />
       </a>
 
@@ -365,96 +347,42 @@
 
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="materialsDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#">
             Materials
           </a>
-          <ul class="dropdown-menu" aria-labelledby="materialsDropdown">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Premium Cotton</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Organic Cotton</a></li>
-                <li><a class="dropdown-item" href="#">Recycled Cotton</a></li>
-                <li><a class="dropdown-item" href="#">Cotton Blends</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Linen</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">European Linen</a></li>
-                <li><a class="dropdown-item" href="#">French Linen</a></li>
-                <li><a class="dropdown-item" href="#">Linen Blends</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Archive</a></li>
-            <li><a class="dropdown-item" href="#">Fabric Certifications</a></li>
-          </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="sustainabilityDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#">
             Sustainability
           </a>
-          <ul class="dropdown-menu" aria-labelledby="sustainabilityDropdown">
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Environmental Impact</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Water Conservation</a></li>
-                <li><a class="dropdown-item" href="#">Waste Reduction</a></li>
-                <li><a class="dropdown-item" href="#">Carbon Footprint</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">Social Responsibility</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Worker Well-being</a></li>
-                <li><a class="dropdown-item" href="#">Community Development</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Certifications & Standards</a></li>
-            <li><a class="dropdown-item" href="#">Our Partners</a></li>
-          </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#">
             Blog
           </a>
-          <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-            <li><a class="dropdown-item" href="#">Ethical Fashion Trends</a></li>
-            <li><a class="dropdown-item" href="#">Sustainable Fabric Innovations</a></li>
-            <li><a class="dropdown-item" href="#">Behind the Scenes at Lusabuy</a></li>
-            <li><a class="dropdown-item" href="#">Industry News & Insights</a></li>
-          </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-uppercase pt-0" href="#">
             Contact
           </a>
-          <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-            <li><a class="dropdown-item" href="#">Request a Quote</a></li>
-            <li><a class="dropdown-item" href="#">General Inquiries</a></li>
-            <li><a class="dropdown-item" href="#">Careers</a></li>
-          </ul>
         </li>
       </ul>
     </div>
+    <div class="d-flex sticky-top searchStick justify-content-center pt-2" class="" style="z-index: -2;">
+      <!-- From Uiverse.io by vinodjangid07 -->
+          <a class="text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
+            <button class="searchButton text-uppercase">
+              <svg class="svgIcon" viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              Explore
+            </button>
+          </a>
+    </div>
   </nav>
-  <div class="d-flex sticky-top searchStick justify-content-center pt-2">
-    <!-- From Uiverse.io by vinodjangid07 -->
-        <a class="text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
-          <button class="searchButton text-uppercase">
-            <svg class="svgIcon" viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-            Explore
-          </button>
-        </a>
-  </div>
 
 
-  <div class="container my-5">
+  <div class="">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     {% for category, message in messages %}
@@ -484,37 +412,34 @@
     {% endblock content %}
   </div>
 
-  <footer class="bg-light py-5 border-top someLessPaddingMob">
-    <div class="d-flex justify-content-between someAlignmentRequire">
-      <p class="fontfooter1 mb-0 d-flex justify-content-center">Copyright © 2024 Lusabuy</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center someAlignmentRequireTopPart">
-          <div class="d-flex align-items-center onWhenScreen">
-            <a class="nav-link pe-2 ps-0 ms-0" href="#">
-              <img src="https://static.thenounproject.com/png/4853735-512.png" class="contactImg pe-0 me-0">
-            </a>
-            <a href="https://ko-fi.com/thelittlejournal" class="fontForDonate text-decoration-none text-reset">
-              <button type="button" class="btn btn-outline-dark top-nav-sm me-2 p-1 pt-0 pb-0">
-                Donate
-              </button>
-            </a>
-          </div>
-          <button type="button" class="subForMob btn btn-outline-dark top-nav-sm p-1 me-3" data-bs-toggle="modal"
+  <footer class="bg-light py-5 border-top  someLessPaddingMob">
+    <div class="addGridInFooter someAlignmentRequire align-items-center">
+        <div class="d-flex align-items-center social-links">
+          <a href="https://www.facebook.com/profile.php?id=61574813890604" class="fa-brands fa-facebook me-2 mb-0 pb-0 text-decoration-none text-dark"></a>
+          <a href="https://www.instagram.com/lusabuy/" class="fa-brands fa-instagram me-2 text-decoration-none text-dark"></a>
+          <a href="https://www.linkedin.com/company/lusabuy" class="fa-brands fa-linkedin text-decoration-none text-dark"></a>
+        </div>
+      <div class="d-flex flex-column align-items-center">
+          <a href="" class="text-decoration-none text-dark">Sustainability</a>
+          <a href="" class="text-decoration-none text-dark">People</a>
+          <a href="" class="text-decoration-none text-dark">Blog</a>
+      </div>
+      <div class="d-flex justify-content-end align-items-center">
+        <div class="d-flex flex-column align-items-center someAlignmentRequireTopPart">
+          <a href=""  class="text-decoration-none text-dark">2-A, No -1 Block Gate Freedom Fighter, KH No- 105,<br> New Delhi, South Delhi, Delhi, 110068 India</a>
+          <a href="mailto:info@lusabuy.com" class="text-decoration-none text-dark">info@lusabuy.com</a>
+          <a href=“tel:9861002612” class="text-decoration-none text-dark">+91 9861002612</a>
+          <a href=“tel:9337690179” class="text-decoration-none text-dark">+91 9337690179</a>
+          <button type="button" class="subForMob btn btn-outline-dark top-nav-sm p-1" data-bs-toggle="modal"
                   data-bs-target="#subscribeModal">
             Subscribe
           </button>
         </div>
-        <div class="d-flex align-items-center social-links">
-          <a href="https://www.facebook.com/thelittlejournalofneindia"
-             class="fa-brands fa-facebook me-2 mb-0 pb-0 text-decoration-none text-dark"></a>
-          <a href="https://www.instagram.com/thelittlejournal.neindia/"
-             class="fa-brands fa-instagram me-2 text-decoration-none text-dark"></a>
-          <a href="https://x.com/TNeindia" class="fa-brands fa-twitter me-2 text-decoration-none text-dark"></a>
-          <a href="https://www.linkedin.com/company/the-little-journal-of-northeast-india/about/"
-             class="fa-brands fa-linkedin text-decoration-none text-dark"></a>
-        </div>
       </div>
     </div>
+    <p class="LusaCopyRight mb-0 d-flex justify-content-center">Copyright © 2024 Lusabuy</p>
+  </footer>
+
     <div class="modal fade shadow" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel"
          aria-hidden="true">
       <div class="modal-dialog">
@@ -542,7 +467,6 @@
         </div>
       </div>
     </div>
-  </footer>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

@@ -1,87 +1,161 @@
 {% extends "universalLayout.html" %}
-
 {% block content %}
-    <div class="position-absolute top-0 start-0">
-        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
-            <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" type="video/mp4">
-        </video>
-        <div class="d-flex">
-            <video autoplay 100p muted plays-inline loop class=" w-50 lusa-video p-0 m-0" style="z-index: -2;">
-                <source src="{{ url_for('static', filename='vid/lusabuyServices.mp4') }}" type="video/mp4">
+
+    <div id="contentContainer" class="" style="z-index: -2;">
+        <div class="position-relative">
+            <video autoplay muted playsinline loop class=" lusa-video" style="width: 100%; height: 100vh; object-fit: cover;">
+                <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" class="p-0 m-0" type="video/mp4">
             </video>
-            <video autoplay 100p muted plays-inline loop class=" w-50 lusa-video" style="z-index: -2;">
-                <source src="{{ url_for('static', filename='vid/lusabuyServices.mp4') }}" type="video/mp4">
-            </video>
+            <div class="position-absolute d-flex flex-column align-items-center " style="width: 100%; height:100%; top: 70%">
+                <p class="firstHomeVid">Redefining Ethical Fashion</p>
+                <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
+                <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+            </div>
         </div>
-        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
-            <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" type="video/mp4">
-        </video>
-        <video autoplay 100p muted plays-inline loop class=" lusa-video" style="z-index: -2; width: 100%; height: 100vh;">
-            <source src="{{ url_for('static', filename='vid/lusabuyMaterial.mp4') }}" type="video/mp4">
-        </video>
+        <div class="d-flex" style=" object-position: top left;">
+            <div class="position-relative block2">
+                <video autoplay muted playsinline loop class=" w-100 lusa-video" style=" object-position: top left;">
+                    <source src="{{ url_for('static', filename='vid/lusabuyServices.mp4') }}" type="video/mp4">
+                </video>
+                <div class="position-absolute upar1" style="width: 100%; height:100%;">
+                    <div class="remainingHomeVid1 d-flex flex-column align-items-center">
+                        <h1 class="">Service</h1>
+                        <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+                    </div>
+                </div>
+            </div>
+            <div class="position-relative block3">
+                <video autoplay muted playsinline loop class=" w-100 lusa-video" style=" object-position: top left;">
+                    <source src="{{ url_for('static', filename='vid/lusabuyPort.mp4') }}" type="video/mp4">
+                </video>
+                <div class="position-absolute upar1" style="width: 100%; height:100%;">
+                    <div class="remainingHomeVid1 d-flex flex-column align-items-center">
+                        <h1 class="">Collection</h1>
+                        <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative block">
+            <video autoplay muted playsinline loop class="lusa-video">
+                <source src="{{ url_for('static', filename='vid/lusabuySustain.mp4') }}" type="video/mp4">
+            </video>
+            <div class="position-absolute upar2" style="width: 100%; height:100%;">
+                <div class="remainingHomeVid2 d-flex flex-column align-items-center ">
+                    <h1 class="">Sustainability</h1>
+                    <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative block">
+            <video autoplay muted playsinline loop class="lusa-video">
+                <source src="{{ url_for('static', filename='vid/lusabuyMaterial.mp4') }}" type="video/mp4">
+            </video>
+            <div class="position-absolute upar2" style="width: 100%; height:100%;">
+                <div class="remainingHomeVid2 d-flex flex-column align-items-center ">
+                    <h1 class="materialLusa">Material</h1>
+                    <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            <div class="marquee-container overflow-hidden bg-light shadow-sm">
+              <div class="marquee-content d-flex align-items-center">
+                <div class="marquee-item px-4 py-2 bg-primary text-white rounded-pill mx-2">XNXX</div>
+                <div class="marquee-item px-4 py-2 bg-success text-white rounded-pill mx-2">XVideos</div>
+                <div class="marquee-item px-4 py-2 bg-info text-white rounded-pill mx-2">XHamsters</div>
+                <div class="marquee-item px-4 py-2 bg-warning text-dark rounded-pill mx-2">Pornhub</div>
+                <div class="marquee-item px-4 py-2 bg-danger text-white rounded-pill mx-2">japanise porn</div>
+              </div>
+            </div>
+        </div>
     </div>
 
-<!--    <video autoplay 100p muted plays-inline loop class="lusa-video position-absolute align-self-center" style="z-index: -1; height: 80%; top:18%; left: 10%">-->
-<!--        <source src="{{ url_for('static', filename='vid/lusabuyVideo.mp4') }}" type="video/mp4">-->
-<!--    </video>-->
-    <!-- Hero Section -->
-<div style="height: calc(40vh);"></div>
-    <section class="hero">
-        <div class="container d-flex flex-column align-items-center ">
-            <h1>Redefining bia Fashion</h1>
-            <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
-            <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>About Lusabuy</h2>
-                    <p>Lusabuy is committed to providing high-quality, ethically sourced cotton and linen fabrics to
-                        boho and resort wear brands worldwide. We prioritize sustainability and fair labor practices in
-                        every step of our manufacturing process.</p>
-                </div>
-                <div class="col-md-6 bg-dark">
-                    <img src="https://via.placeholder.com/500x300" alt="Lusabuy Manufacturing" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="instafeed-container"></div>
 
-    <!-- About Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>About Lusabuy</h2>
-                    <p>Lusabuy is committed to providing high-quality, ethically sourced cotton and linen fabrics to
-                        boho and resort wear brands worldwide. We prioritize sustainability and fair labor practices in
-                        every step of our manufacturing process.</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/500x300" alt="Lusabuy Manufacturing" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>About Lusabuy</h2>
-                    <p>Lusabuy is committed to providing high-quality, ethically sourced cotton and linen fabrics to
-                        boho and resort wear brands worldwide. We prioritize sustainability and fair labor practices in
-                        every step of our manufacturing process.</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/500x300" alt="Lusabuy Manufacturing" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
+<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+    console.clear();
+    $('video').addClass('video-background');
+
+
+
+const video = document.querySelector(".video-background");
+let src = video.currentSrc || video.src;
+console.log(video, src);
+
+/* Make sure the video is 'activated' on iOS */
+function once(el, event, fn, opts) {
+  var onceFn = function (e) {
+    el.removeEventListener(event, onceFn);
+    fn.apply(this, arguments);
+  };
+  el.addEventListener(event, onceFn, opts);
+  return onceFn;
+}
+
+once(document.documentElement, "touchstart", function (e) {
+  video.play();
+  video.pause();
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+let tl = gsap.timeline({
+  defaults: { duration: 1 },
+  scrollTrigger: {
+    trigger: "#container",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true
+  }
+});
+
+once(video, "loadedmetadata", () => {
+  tl.fromTo(
+    video,
+    {
+      currentTime: 0
+    },
+    {
+      currentTime: video.duration || 1
+    }
+  );
+});
+
+/*!
+     * © This code was written by Nicolai Palmkvist.
+     * For more information, visit my Elementor Youtube channel: https://www.youtube.com/@nicopalmkvist
+     */
+
+setTimeout(function () {
+  if (window["fetch"]) {
+    fetch(src)
+      .then((response) => response.blob())
+      .then((response) => {
+        var blobURL = URL.createObjectURL(response);
+
+        var t = video.currentTime;
+        once(document.documentElement, "touchstart", function (e) {
+          video.play();
+          video.pause();
+        });
+
+        video.setAttribute("src", blobURL);
+        video.currentTime = t + 0.01;
+      });
+  }
+}, 1000);
+});
+
+</script>
 
 {% endblock content %}
