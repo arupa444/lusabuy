@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchStick = document.querySelector('.searchStick');
         const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
         if( window.innerWidth > 992 ){
+            navbar.classList.add('flex-column');
             if (window.scrollY > 50) {
                 navbar.classList.add('d-flex');
                 navbar.classList.add('justify-content-center');
-                navbar.classList.remove('flex-column');
                 inviBefore.classList.add('d-none');
                 inviAfter.classList.remove('d-none');
                 navbarNav.classList.remove('navbar-collapse');
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 navbar.classList.remove('d-flex');
                 navbar.classList.remove('justify-content-center');
-                navbar.classList.add('flex-column');
                 inviBefore.classList.remove('d-none');
                 inviAfter.classList.add('d-none');
                 navbarNav.classList.add('navbar-collapse');
@@ -45,12 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }else{
-                navLink.forEach((ele)=>{
-                    ele.classList.add('theColorForLusaNavBefore');
-                    ele.classList.remove('theColorForLusaNavAfter');
-                });
-                inviAfter.classList.add('d-none');
-                searchStick.style.top = "10vh";
+            navbar.classList.remove('flex-column');
+            navLink.forEach((ele)=>{
+                ele.classList.add('theColorForLusaNavBefore');
+                ele.classList.remove('theColorForLusaNavAfter');
+            });
+            inviAfter.classList.add('d-none');
+            searchStick.style.top = "10vh";
         }
     }
     // Attach the scroll event listener
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener("resize", handleScroll);
     handleScroll(); // Call it once to set initial state
 });
-function contactAndDonate() {
+function lusaFooter() {
   let onWhenScreenStore = document.querySelectorAll(".onWhenScreen");
   let offWhenScreenStore = document.querySelectorAll(".offWhenScreen");
   let dropAfter415 = document.querySelectorAll(".dropdown-menu");
@@ -71,9 +71,6 @@ function contactAndDonate() {
     document
       .querySelector(".someAlignmentRequire")
       .classList.add("flex-column-reverse");
-    document
-      .querySelector(".someAlignmentRequire")
-      .classList.remove("align-items-center");
     document.querySelector(".someAlignmentRequire").classList.remove("ms-5");
     document.querySelector(".someAlignmentRequire").classList.remove("me-5");
     document.querySelector(".someAlignmentRequire").classList.add("ms-3");
@@ -106,9 +103,6 @@ function contactAndDonate() {
     document
       .querySelector(".someAlignmentRequire")
       .classList.remove("flex-column-reverse");
-    document
-      .querySelector(".someAlignmentRequire")
-      .classList.add("align-items-center");
     document.querySelector(".someAlignmentRequire").classList.add("ms-5");
     document.querySelector(".someAlignmentRequire").classList.add("me-5");
     document.querySelector(".someAlignmentRequire").classList.remove("ms-3");
@@ -141,8 +135,8 @@ function contactAndDonate() {
   }
 }
 
-contactAndDonate();
-window.addEventListener("resize", contactAndDonate);
+lusaFooter();
+window.addEventListener("resize", lusaFooter);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Existing code for general dropdown handling...
@@ -279,3 +273,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contentContainer = document.getElementById('contentContainer');
+    const remainingHomeVid11 = document.querySelectorAll(".remainingHomeVid1");
+    const remainingHomeVid21 = document.querySelectorAll(".remainingHomeVid2");
+    const theRemainingHomeVid91 = document.querySelectorAll(".upar1");
+    const theRemainingHomeVid92 = document.querySelectorAll(".upar2");
+    const theHeight = document.querySelector('.navbar');
+    const totalHeight = theHeight.scrollHeight;
+    const totalHeight1 = remainingHomeVid11[0].scrollHeight;
+    const totalHeight2 = remainingHomeVid21[0].scrollHeight;
+    contentContainer.style.marginTop = -totalHeight+"px";
+
+    theRemainingHomeVid91.forEach((ele)=>{
+        ele.style.top = "calc(50% - "+totalHeight1/2+"px)";
+    });
+    theRemainingHomeVid92.forEach((ele)=>{
+        ele.style.top = "calc(50% - "+totalHeight2/2+"px)";
+    });
+
+
+    // You can now use this 'totalHeight' value for other purposes.
+    // For example, you might want to dynamically set the height of another element
+    // or send this value to your Flask backend via an AJAX request.
+
+    // Example: set the height of another element
+    // const anotherElement = document.getElementById('anotherElement');
+    // anotherElement.style.height = totalHeight + 'px';
+
+
+});
+
+
+var userFeed = new Instafeed({
+    get: 'user',
+    target: "instafeed-container",
+    resolution: 'low_resolution',
+    accessToken: 'IGAARe6tZAbYZCZABZAE9ldV9hM21reXN6TVU4bUdZAZAGtCMk02VmNRNmRwblBTSHRMZADFXdUxjUkFHWmRxUnNMeU5ETV80eVRTcTBzRWZATaGdTeXllMm5NR0J1bHRYSlRULTZAJVDNzOXBpd1llc0k5dEhIdkhJaHdaVXhTeHdDQlMyWQZDZD',
+    limit: 8,
+    template: '<div class="instafeed-item"><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></div>',
+    after: function() {
+    var container = document.getElementById('instafeed-container');
+    container.classList.add('instafeed-grid'); //Add the class instafeed-grid to the container div
+    }
+});
+userFeed.run();

@@ -22,19 +22,35 @@
     font-style: normal;
 }
 
-@font-face-nav{
-    font-family: 'Saglity';
-    src: url('font/finalFont.otf') format('opentype');
+@font-face {
+    font-family: 'Didot';
+    src: url('font/Didot.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+
 .searchStick {
     font-family: 'Saglity';
 }
-body {
+html {
+      margin: 0;
+      padding: 0;
     min-height: 100%;
-    font-family: '';
+}
+body {
+      margin: 0;
+      padding: 0;
+    min-height: 100%;
+    font-family: 'Didot';
     background: #F8F9FA;
+}
+
+.lusa-video {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    object-fit: cover;
 }
 nav{
     font-family: 'Saglity';
@@ -51,6 +67,10 @@ nav{
         top: 10%;
     }
 }
+.addGridInFooter{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 .footer-and-nav-color{
     background-color : var(--color-nav) !important
 }
@@ -62,6 +82,7 @@ nav{
   zoom: 2;
   background-color: transparent;
 }
+
 .logo {
   height: 14vh;
   padding: 5px;
@@ -288,10 +309,6 @@ html {
   box-shadow: none;
 }
 
-.hero {
-  height: calc(400vh - 80px);
-  padding: 20px;
-}
 .content-section {
   margin: 1rem auto;
   background: var(--color-white);
@@ -305,7 +322,7 @@ footer {
   background: var(--color-white);
 }
 
-footer .fontfooter1, .sizze {
+footer .LusaCopyRight{
   font-family: 'Gilmer Light';
   font-size: 0.6rem;
 }
@@ -319,7 +336,22 @@ footer .ankers a {
 .card-text, .card-title{
     color: var(--color-black);
 }
+  #instafeed-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  .instafeed-grid .instafeed-item {
+    width: 25%; /* Make each image take up 25% of the container width (4 images per row) */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 5px; /* Add some padding around each image */
+  }
+
+  .instafeed-item img {
+    width: 100%; /* Make the image fill the container */
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+  }
 footer .custom-link {
   text-decoration: none;
   color: var(--color-primary);
@@ -374,6 +406,7 @@ footer .mediaKit {
   transition-duration: 1.5s;
 }
 
+
 .bell path {
   fill: rgb(19, 19, 19);
 }
@@ -387,6 +420,109 @@ footer .mediaKit {
   animation: animate-gradient 5s linear infinite;
   transition-duration: .5s;
 }
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.block {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear1 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.block2 {
+    animation: appear2 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes appear3 {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.block3 {
+    animation: appear3 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.firstHomeVid{
+    color: rgba(0, 0, 0, .36);
+}
+.fa-brands{
+    font-size : 1.5rem;
+}
+.firstHomeVid {
+    font-size : 5rem;
+}
+.remainingHomeVid1 h1{
+    font-family: 'Saglity';
+    color: rgba(255, 255, 255, .5);
+}
+.remainingHomeVid2 h1{
+    font-family: 'Saglity';
+    color: rgba(255, 255, 255, .5);
+}
+.materialLusa{
+    background: linear-gradient(to right,rgba(255, 255, 255, .5),rgba(255, 255, 255, .5),#000000,rgba(255, 255, 255, .5),rgba(255, 255, 255, .5));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 5s linear infinite;
+}
+.remainingHomeVid2 p{
+    color: rgba(255, 255, 255, .5);
+}
+.btn{
+    outline: none;
+}
+
+
+.block1 {
+    animation: appear1 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear2 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+
+
+
 
 .searchButton:active {
   transform: scale(0.97);
@@ -571,5 +707,35 @@ footer .mediaKit {
     background-position: 200%;
     }
 }
-/* Animations */
-@keyframes logo-fade
+
+.marquee-container {
+   width: 100%;
+   background-color: #f8f9fa;
+   padding: 15px 0;
+ }
+
+ .marquee-content {
+   display: flex;
+   animation: marquee 20s linear infinite;
+ }
+
+ .marquee-item {
+   flex: 0 0 auto;
+   padding: 0 20px;
+   font-size: 1.2rem;
+   color: #495057;
+ }
+
+ @keyframes marquee {
+   0% {
+     transform: translateX(100%);
+   }
+
+   100% {
+     transform: translateX(-100%);
+   }
+ }
+
+ .marquee-container:hover .marquee-content {
+   animation-play-state: paused;
+ }
