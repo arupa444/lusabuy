@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
         if( window.innerWidth > 992 ){
             navbar.classList.add('flex-column');
+            searchStick.style.top = "0vh";
             if (window.scrollY > 50) {
                 navbar.classList.add('d-flex');
                 navbar.classList.add('justify-content-center');
@@ -21,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 navbarNav.classList.add('justify-content-between');
                 navbarNav.classList.add('align-items-center');
                 navbarNav.classList.add('ps-4');
-                searchStick.style.top = "20vh";
                 navLink.forEach((ele)=>{
                     ele.classList.remove('theColorForLusaNavBefore');
                     ele.classList.add('theColorForLusaNavAfter');
@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 navbarNav.classList.remove('justify-content-between');
                 navbarNav.classList.remove('align-items-center');
                 navbarNav.classList.remove('ps-4');
-                searchStick.style.top = "17vh";
                 navLink.forEach((ele)=>{
                     ele.classList.add('theColorForLusaNavBefore');
                     ele.classList.remove('theColorForLusaNavAfter');
@@ -319,3 +318,38 @@ var userFeed = new Instafeed({
     }
 });
 userFeed.run();
+
+
+document.addEventListener('DOMContentLoaded', function() { // Ensure the DOM is fully loaded
+
+    const videos = document.querySelectorAll('.lusa-video');
+
+    videos.forEach((video)=>{
+    console.log(video)
+        if (!video) {
+            console.error('Video element with ID "myVideo" not found.');
+            return; // Stop execution if the video element doesn't exist
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            },
+            {
+                threshold: 0.03 // Adjust threshold as needed
+            }
+        );
+
+        observer.observe(video); // Start observing the video element
+    });
+
+});
+
+
+// slide
