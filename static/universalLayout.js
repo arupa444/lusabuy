@@ -136,6 +136,17 @@ function lusaFooter() {
 
 lusaFooter();
 window.addEventListener("resize", lusaFooter);
+//
+//function blogOperations() {
+//    const theHeight = document.querySelector('.navbar');
+//    const totalHeight = theHeight.scrollHeight;
+//    console.log(totalHeight);
+//    const fbFeedForBlog = document.getElementById('facebook-feed-container');
+//    fbFeedForBlog.style.top = `${totalHeight}px`
+//}
+//window.addEventListener('scroll', blogOperations);
+//window.addEventListener("resize", blogOperations);
+//blogOperations();
 
 document.addEventListener("DOMContentLoaded", function () {
   // Existing code for general dropdown handling...
@@ -166,16 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
-    const interviewsDropdownLink = document.getElementById('interviewsDropdown');
-      interviewsDropdownLink.addEventListener('click', function (event) {
-        if (window.innerWidth <= 992) {
-          event.preventDefault();
-          event.stopPropagation();
-          const interviewsDropdownMenu = this.nextElementSibling;
-          interviewsDropdownMenu.classList.toggle('show');
-        }
-      });
   // NEW CODE END
 });
 window.onload = function () {
@@ -284,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalHeight1 = remainingHomeVid11[0].scrollHeight;
     const totalHeight2 = remainingHomeVid21[0].scrollHeight;
     contentContainer.style.marginTop = -totalHeight+"px";
+    console.log(totalHeight);
 
     theRemainingHomeVid91.forEach((ele)=>{
         ele.style.top = "calc(50% - "+totalHeight1/2+"px)";
@@ -291,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
     theRemainingHomeVid92.forEach((ele)=>{
         ele.style.top = "calc(50% - "+totalHeight2/2+"px)";
     });
-
 
     // You can now use this 'totalHeight' value for other purposes.
     // For example, you might want to dynamically set the height of another element
