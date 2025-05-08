@@ -30,8 +30,8 @@
 }
 
 @font-face {
-    font-family: 'paperFlower';
-    src: url('font/paperFlower.otf') format('opentype');
+    font-family: 'gilmer-light';
+    src: url('font/gilmer-light.otf') format('opentype');
 }
 
 .searchStick {
@@ -341,10 +341,11 @@ footer .ankers a {
   #instafeed-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content : space-evenly;
   }
 
   .instafeed-grid .instafeed-item {
-    width: 25%; /* Make each image take up 25% of the container width (4 images per row) */
+    width: 20rem; /* Make each image take up 25% of the container width (4 images per row) */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     padding: 5px; /* Add some padding around each image */
   }
@@ -775,5 +776,5 @@ footer .mediaKit {
 
 
 footer {
-    font-family: 'paperFlower';
+    font-family: 'gilmer-light';
 }

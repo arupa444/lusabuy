@@ -46,11 +46,7 @@ def home():
 
 
 @app_bluePrint.route('/blog')
-def submissionGuidelines():
-    guidelines_cursor = g.db.guidelines.find({}).sort('_id', pymongo.ASCENDING)
-    guidelines12 = [serialize_document(doc) for doc in guidelines_cursor]
-    categorySpecificGuidelines_cursor = g.db.categorySpecificGuidelines.find({}).sort('_id', pymongo.ASCENDING)
-    categorySpecificGuidelines12 = [serialize_document(doc) for doc in categorySpecificGuidelines_cursor]
-    return render_template('submissionGuidelines.html', title='Blog', guidelines = guidelines12[0]["content"], categorySpecificGuidelines=categorySpecificGuidelines12)
+def blog():
+    return render_template('blog.html', title='Blog')
 
 
