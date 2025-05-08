@@ -60,7 +60,9 @@ body {
 nav{
     font-family: 'Saglity';
 }
-
+.navbar{
+    background: #F8F9FA;
+}
 .littleStikyHome {
     float: left;
     margin-right: 20px;
