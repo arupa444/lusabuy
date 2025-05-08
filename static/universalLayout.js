@@ -136,17 +136,6 @@ function lusaFooter() {
 
 lusaFooter();
 window.addEventListener("resize", lusaFooter);
-//
-//function blogOperations() {
-//    const theHeight = document.querySelector('.navbar');
-//    const totalHeight = theHeight.scrollHeight;
-//    console.log(totalHeight);
-//    const fbFeedForBlog = document.getElementById('facebook-feed-container');
-//    fbFeedForBlog.style.top = `${totalHeight}px`
-//}
-//window.addEventListener('scroll', blogOperations);
-//window.addEventListener("resize", blogOperations);
-//blogOperations();
 
 document.addEventListener("DOMContentLoaded", function () {
   // Existing code for general dropdown handling...
@@ -274,6 +263,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+let totalHeight = 0; // Declare totalHeight in a wider scope.  Initialize to a default value.
+
+function blogOperations() {
+  const theHeight = document.querySelector('.navbar');
+  if (theHeight) {  // Check if the navbar element exists
+    totalHeight = theHeight.scrollHeight; // Update totalHeight
+    console.log("blogOperations totalHeight:", totalHeight);
+    const fbFeedForBlog = document.getElementById('facebook-feed-container');
+    if (fbFeedForBlog) { // Check if the facebook-feed-container element exists
+      fbFeedForBlog.style.top = `${totalHeight}px`;
+    } else {
+      console.warn("facebook-feed-container not found"); // Important for debugging!
+    }
+  } else {
+    console.warn("navbar not found"); // Important for debugging!
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const contentContainer = document.getElementById('contentContainer');
     const remainingHomeVid11 = document.querySelectorAll(".remainingHomeVid1");
@@ -281,30 +290,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const theRemainingHomeVid91 = document.querySelectorAll(".upar1");
     const theRemainingHomeVid92 = document.querySelectorAll(".upar2");
     const theHeight = document.querySelector('.navbar');
-    const totalHeight = theHeight.scrollHeight;
-    const totalHeight1 = remainingHomeVid11[0].scrollHeight;
-    const totalHeight2 = remainingHomeVid21[0].scrollHeight;
-    contentContainer.style.marginTop = -totalHeight+"px";
-    console.log(totalHeight);
 
-    theRemainingHomeVid91.forEach((ele)=>{
-        ele.style.top = "calc(50% - "+totalHeight1/2+"px)";
-    });
-    theRemainingHomeVid92.forEach((ele)=>{
-        ele.style.top = "calc(50% - "+totalHeight2/2+"px)";
-    });
+    if (theHeight) {
+        totalHeight = theHeight.scrollHeight; // Assign to the globally scoped variable
+        console.log("DOMContentLoaded totalHeight:", totalHeight);
+        contentContainer.style.marginTop = -totalHeight + "px";
 
-    // You can now use this 'totalHeight' value for other purposes.
-    // For example, you might want to dynamically set the height of another element
-    // or send this value to your Flask backend via an AJAX request.
+        const totalHeight1 = remainingHomeVid11[0].scrollHeight;
+        const totalHeight2 = remainingHomeVid21[0].scrollHeight;
 
-    // Example: set the height of another element
-    // const anotherElement = document.getElementById('anotherElement');
-    // anotherElement.style.height = totalHeight + 'px';
+        theRemainingHomeVid91.forEach((ele) => {
+            ele.style.top = "calc(50% - " + totalHeight1 / 2 + "px)";
+        });
+        theRemainingHomeVid92.forEach((ele) => {
+            ele.style.top = "calc(50% - " + totalHeight2 / 2 + "px)";
+        });
+    } else {
+      console.warn("navbar not found during DOMContentLoaded");
+    }
 
-
+    blogOperations(); // Call initially after DOMContentLoaded
 });
 
+
+window.addEventListener('scroll', blogOperations);
+window.addEventListener("resize", blogOperations);
 
 var userFeed = new Instafeed({
     get: 'user',
