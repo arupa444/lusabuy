@@ -1,0 +1,291 @@
+{% extends "universalLayout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h1>Start Your Fashion Brand Journey With Us</h1>
+                    <p>Shoot us your message on <a href="tel:+917506526252">+91 7506526252</a>. We'll get back to you at the soonest, until then #begood #dogood</p>
+
+                    <h2>Contact</h2>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@theoddfactory.com">info@theoddfactory.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+917506526252">+91-7506526252</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Business Address - NR Jay Coach Stop, GR FLR, 13, Guru Gobind Singh Industrial Ltd, Off W E Highway, Goregaon East, Mumbai, Mumbai Suburban, Maharashtra, 400063</p>
+
+                    <div class="social-media">
+                        <h2>Social Media</h2>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                    <!-- Lusabuy Unique Selling Points -->
+                    <div class="lusabuy-usp">
+                        <h2>Why Partner With Lusabuy?</h2>
+                        <ul>
+                            <li><i class="fas fa-leaf"></i> **Ethical & Sustainable:** We're committed to redefining ethical fashion.</li>
+                            <li><i class="fas fa-handshake"></i> **Trusted Manufacturer:** Premium cotton & linen manufacturer in India.</li>
+                            <li><i class="fas fa-globe"></i> **Global Sourcing:** Your trusted partner for boho & resort wear brands.</li>
+                            <li><i class="fas fa-tags"></i> **Affordable Style:** On-trend, eco-friendly fashion at accessible prices.</li>
+                            <li><i class="fas fa-heart"></i> **Bohemian Focus:** Connecting you with the soul of Indian craftsmanship.</li>
+                        </ul>
+                    </div>
+
+                    <!--Optional:  Add a map using Google Maps API here -->
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h2>Got Any Questions?</h2>
+                    <form action="#" method="post">  <!-- Replace "#" with your form submission endpoint -->
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                            <small class="form-text text-muted">Please mention country code eg: +61</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                    <!-- "Need Help?" button (outside the form for positioning) -->
+                    <a href="#" class="btn btn-outline-secondary need-help-btn">Need Help?</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        /* General Styles */
+        body {
+            line-height: 1.6;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        h1, h2 {
+            color: #212529;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+            color: #007bff;
+        }
+
+        .social-media a {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #495057;
+        }
+
+        .social-media a:hover {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* "Need Help?" Button Styling */
+        .need-help-btn {
+            position: absolute; /* Position it absolutely */
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px; /* Adjust the distance from the right */
+            background-color: white;
+            border-color: #6c757d;
+            color: #6c757d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .need-help-btn:hover {
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Lusabuy USP Styling */
+        .lusabuy-usp {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f4f0;  /* A light, earthy tone */
+            border-radius: 8px;
+        }
+
+        .lusabuy-usp h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #5c3d2e;  /* Darker earthy tone */
+        }
+
+        .lusabuy-usp ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lusabuy-usp li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .lusabuy-usp li i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #9c6d51;  /* A warm, muted tone */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-info h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-media a {
+                font-size: 1.3rem;
+            }
+
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+
+        }
+        /* Optional:  Add animations or transitions for a more dynamic feel */
+        .contact-info {
+        transition: transform 0.3s ease-in-out;
+        }
+        .contact-info:hover {
+            transform: scale(1.03); /* Slight scale up on hover */
+        }
+
+        .btn-primary {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+        .need-help-btn {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .need-help-btn:hover {
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+    </style>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock content %}

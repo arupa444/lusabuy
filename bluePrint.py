@@ -49,4 +49,8 @@ def home():
 def blog():
     return render_template('blog.html', title='Blog')
 
+@app_bluePrint.route('/contactUs')
+def contactUs():
+    return render_template('contactUs.html', title='Contact Us')
+
 
