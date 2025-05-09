@@ -759,7 +759,7 @@ footer .mediaKit {
 
 .marquee-content {
  display: flex;
- animation: marquee 20s linear infinite;
+ animation: marquee 50s linear infinite;
  width: fit-content; /* Crucial: Make content width adjust to its children */
 }
 

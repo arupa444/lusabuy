@@ -364,3 +364,77 @@ document.addEventListener('DOMContentLoaded', function() { // Ensure the DOM is 
 
 
 // slide
+
+const slider = document.querySelectorAll('.slider');
+const slides = document.querySelectorAll('.slide');
+const sliderContainer = document.querySelectorAll('.slider-container');
+let currentIndex = 0;
+let startY = 0;
+let intervalId; // Declare intervalId outside the functions
+
+// Function to move the slider
+function moveSlider() {
+  slider.forEach((ele)=>{
+    ele.style.transform = `translateY(-${currentIndex * 100}%)`;
+  });
+}
+
+// Function to go to the next slide
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  moveSlider();
+}
+
+// Function to start or restart the autoplay interval
+function startAutoplay() {
+  // Clear any existing interval to prevent multiple intervals running
+  clearInterval(intervalId);
+  intervalId = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+}
+
+// Function to check if the container has content and restart after 1 second
+function checkAndRestart() {
+  //if (slides.length === 0) { // Check if there are NO slides
+  if (slides.length === 0) {  // Replaced check to use existing slides.length
+    setTimeout(() => { // Use arrow function for correct `this` context
+       clearInterval(intervalId); // Clear existing auto play
+       startAutoplay(); // Restart auto play
+    }, 1000); // Wait 1 second
+  }
+}
+// Swipe event listeners
+sliderContainer.forEach((ele)=>{
+    ele.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+      clearInterval(intervalId); // Stop autoplay on touch
+    });
+});
+
+sliderContainer.forEach((ele)=>{
+    ele.addEventListener('touchmove', (e) => {
+      const deltaY = e.touches[0].clientY - startY;
+      const sensitivity = 50;
+
+      if (deltaY > sensitivity) { // Swipe down
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        moveSlider();
+        startY = e.touches[0].clientY; // Reset startY
+      } else if (deltaY < -sensitivity) { // Swipe up
+        currentIndex = (currentIndex + 1) % slides.length;
+        moveSlider();
+        startY = e.touches[0].clientY; // Reset startY
+      }
+    });
+});
+
+
+sliderContainer.forEach((ele)=>{
+    ele.addEventListener('touchend', () => {
+      // Restart autoplay
+      startAutoplay();
+    });
+});
+
+
+// Initial Autoplay and check
+startAutoplay();
