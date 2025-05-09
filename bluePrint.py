@@ -7,6 +7,7 @@ app_bluePrint = Blueprint("lusaPrint", __name__)
 from datetime import datetime
 import pymongo
 from bson.objectid import ObjectId
+import os
 from bson import json_util
 
 @app_bluePrint.before_request
@@ -42,7 +43,11 @@ def home():
     # g.db.aaravInsites.insert_many(aaravInsites) # to add a collection in a static manner
     # collectionArupa = g.db["interviews"]
     # all_collectionArupa = collectionArupa.find()
-    return render_template('index.html', title='Home')
+    folder_path = 'static/img/Compliance' # Replace with the actual path
+    files1 = os.listdir(folder_path)
+    folder_path = 'static/img/FABRICS' # Replace with the actual path
+    files2 = os.listdir(folder_path)
+    return render_template('index.html', title='Home', files1 = files1, files2 = files2)
 
 
 @app_bluePrint.route('/blog')

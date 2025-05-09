@@ -6,10 +6,9 @@
             <video autoplay muted playsinline loop class="lusa-video" style="width: 100%; height: 100vh; object-fit: cover;">
                 <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" class="p-0 m-0" type="video/mp4">
             </video>
-            <div class="position-absolute d-flex flex-column align-items-center " style="width: 100%; height:100%; top: 60%">
-                <h1 class="firstHomeVid">Beyond The Runway</h1>
-                <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
-                <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+            <div class="position-absolute d-flex flex-column align-items-center " style="width: 100%; height:100%; top: 70%">
+                <h1 class="firstHomeVid fw-normal">Beyond The Runway</h1>
+                <a href="#" class="btn btn-outline-dark text-decoration-none" style="font-family: 'Kalesi'; font-size : 1.2rem;">Our Story</a>
             </div>
         </div>
         <div class="d-flex" style=" object-position: top left;">
@@ -20,7 +19,7 @@
                 <div class="position-absolute upar1" style="width: 100%; height:100%;">
                     <div class="remainingHomeVid1 d-flex flex-column align-items-center">
                         <h1 class="">Service</h1>
-                        <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+                        <a href="#" class="btn btn-outline-light text-decoration-none" style="font-family: 'Kalesi';">Explore</a>
                     </div>
                 </div>
             </div>
@@ -31,7 +30,7 @@
                 <div class="position-absolute upar1" style="width: 100%; height:100%;">
                     <div class="remainingHomeVid1 d-flex flex-column align-items-center">
                         <h1 class="">Collection</h1>
-                        <a href="#" class="btn btn-primary bg-dark">Explore Our Materials</a>
+                        <a href="#" class="btn btn-outline-light  text-decoration-none" style="font-family: 'Kalesi';">Explore</a>
                     </div>
                 </div>
             </div>
@@ -62,15 +61,16 @@
             </div>
         </div>
     </div>
+    {% set prefix = "url_for('static', filename='img/" %}
+
+                  {% for imgElement in files1 %}
+<p>{{ prefix+"Compliance/"+imgElement }}</p>
+                  {% endfor %}
     <div class="d-flex justify-content-center">
         <div class="" style="width : 33%">
             <div class="marquee-container overflow-hidden bg-light shadow-sm">
               <div class="marquee-content d-flex align-items-center">
-                <div class="marquee-item px-4 py-2 bg-primary text-white rounded-pill mx-2">1</div>
-                <div class="marquee-item px-4 py-2 bg-success text-white rounded-pill mx-2">2</div>
-                <div class="marquee-item px-4 py-2 bg-info text-white rounded-pill mx-2">3</div>
-                <div class="marquee-item px-4 py-2 bg-warning text-dark rounded-pill mx-2">4</div>
-                <div class="marquee-item px-4 py-2 bg-danger text-white rounded-pill mx-2">5</div>
+
 
                 <!-- Duplicate the content to create a seamless loop -->
                 <div class="marquee-item px-4 py-2 bg-primary text-white rounded-pill mx-2">1</div>

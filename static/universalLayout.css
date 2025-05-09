@@ -36,7 +36,12 @@
 
 @font-face {
     font-family: 'Tiara';
-    src: url('font/AnacondaWildstyle_PERSONAL_USE_ONLY.otf') format('opentype');
+    src: url('font/Billstone.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Kalesi';
+    src: url('font/Kalesi-Regular.otf') format('opentype');
 }
 
 .searchStick {
@@ -67,7 +72,7 @@ nav{
 }
 
 .firstHomeVid{
-    color: rgba(0, 0, 0, .36);
+    color: black;
     font-size : 3rem;
     font-family : Tiara;
 }
