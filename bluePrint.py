@@ -77,7 +77,7 @@ standard = [
 ]
 
 
-brand = [
+brands = [
     {
         "id": 1,
         "img" : "static/img/Brands/BBG.png",
@@ -106,7 +106,7 @@ brand = [
     {
         "id": 6,
         "img" : "static/img/Brands/naudic.png",
-        "description": "naudic"
+        "description": "Naudic"
     },
     {
         "id": 7,
@@ -152,7 +152,7 @@ def home():
     # certification = os.listdir(folder_path)
     # folder_path = 'static/img/FABRICS' # Replace with the actual path
     # standard = os.listdir(folder_path)
-    return render_template('index.html', title='Home', certification = certification, standard = standard, brand = brand)
+    return render_template('index.html', title='Home', certification = certification, standard = standard, brands = brands)
 
 @app_bluePrint.route('/blog')
 def blog():

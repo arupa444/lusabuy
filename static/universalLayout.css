@@ -44,6 +44,11 @@
     src: url('font/Kalesi-Regular.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'gyugyu';
+    src: url('font/Bellerose.ttf') format('opentype');
+}
+
 .searchStick {
     font-family: 'Saglity';
 }
@@ -467,7 +472,7 @@ footer .mediaKit {
 .blockText1 {
     animation: appearText1 linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 100%;
+    animation-range: entry 0% cover 43%;
 }
 
 @keyframes appearText2 {
@@ -481,7 +486,7 @@ footer .mediaKit {
 .blockText2 {
     animation: appearText2 linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 36%;
 }
 
 
@@ -498,7 +503,7 @@ footer .mediaKit {
 .block2 {
     animation: appear2 linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 36%;
 }
 
 @keyframes appear3 {
@@ -514,7 +519,7 @@ footer .mediaKit {
 .block3 {
     animation: appear3 linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 36%;
 }
 
 .fa-brands{
@@ -759,7 +764,7 @@ footer .mediaKit {
 
 .marquee-content {
  display: flex;
- animation: marquee 50s linear infinite;
+ animation: marquee 120s linear infinite;
  width: fit-content; /* Crucial: Make content width adjust to its children */
 }
 
@@ -789,4 +794,38 @@ footer .mediaKit {
 
 footer {
     font-family: 'gilmer-light';
+}
+
+
+
+/* Lusabuy USP Styling */
+.lusabuy-usp {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f4f0;  /* A light, earthy tone */
+    border-radius: 8px;
+}
+
+.lusabuy-usp h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #5c3d2e;  /* Darker earthy tone */
+}
+
+.lusabuy-usp ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lusabuy-usp li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.lusabuy-usp li i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #9c6d51;  /* A warm, muted tone */
 }

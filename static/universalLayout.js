@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const remainingHomeVid21 = document.querySelectorAll(".remainingHomeVid2");
     const theRemainingHomeVid91 = document.querySelectorAll(".upar1");
     const theRemainingHomeVid92 = document.querySelectorAll(".upar2");
+    const theRemainingHomeVid93 = document.querySelectorAll(".upar3");
     const theHeight = document.querySelector('.navbar');
 
     if (theHeight) {
@@ -298,12 +299,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const totalHeight1 = remainingHomeVid11[0].scrollHeight;
         const totalHeight2 = remainingHomeVid21[0].scrollHeight;
+        const totalHeight3 = remainingHomeVid21[1].scrollHeight;
 
         theRemainingHomeVid91.forEach((ele) => {
             ele.style.top = "calc(50% - " + totalHeight1 / 2 + "px)";
         });
         theRemainingHomeVid92.forEach((ele) => {
             ele.style.top = "calc(50% - " + totalHeight2 / 2 + "px)";
+        });
+
+        theRemainingHomeVid93.forEach((ele) => {
+            ele.style.top = "calc(50% - " + totalHeight3 / 2 + "px)";
         });
     } else {
       console.warn("navbar not found during DOMContentLoaded");

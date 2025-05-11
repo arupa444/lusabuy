@@ -18,7 +18,7 @@
                 </video>
                 <div class="position-absolute upar1" style="width: 100%; height:100%;">
                     <div class="remainingHomeVid1 d-flex flex-column align-items-center">
-                        <h1 class="">Service</h1>
+                        <h1 class="">Services</h1>
                         <a href="#" class="btn btn-outline-light text-decoration-none" style="font-family: 'Kalesi';">Explore</a>
                     </div>
                 </div>
@@ -41,22 +41,24 @@
             </video>
             <div class="position-absolute upar2" style="width: 100%; height:100%;">
                 <div class="remainingHomeVid2 d-flex justify-content-evenly align-items-center blockText1">
-                    <h1 class="">Sustainability</h1>
-                    <div class="d-flex flex-column align-items-center">
-                        <p>Premium Cotton & Linen Manufacturer</p>
-                        <p>Global Sourcing Partner for Boho & Resort Wear Brands</p>
+                    <div class="w-50">
+                        <h1 class="d-flex justify-content-center">Sustainability</h1>
+                    </div>
+                    <div class="w-50 d-flex justify-content-center">
+                        <p class="d-flex justify-content-center w-50" style="font-family: 'gyugyu'; font-size : 1.3rem;">At Lusabuy, sustainability drives everything we do, from ethical sourcing to eco-friendly production. With SEDEX and Higg Index-certified factories, we ensure responsible and transparent practices. Join us in building a fashion supply chain that’s ethical, high-quality, and sustainable.</p>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="position-relative block">
             <video id="myVideo" autoplay muted playsinline loop class="lusa-video">
                 <source src="{{ url_for('static', filename='vid/lusabuyMaterial.mp4') }}" type="video/mp4">
             </video>
-            <div class="position-absolute upar2" style="width: 100%; height:100%;">
-                <div class="remainingHomeVid2 d-flex flex-column align-items-center blockText2">
+            <div class="position-absolute upar3" style="width: 100%; height:100%;">
+                <div class="remainingHomeVid2 d-flex flex-column align-items-center blockText1">
                     <h1 class="materialLusa">Material</h1>
-                    <p>Premium Cotton & Linen Manufacturer | Global Sourcing Partner for Boho & Resort Wear Brands</p>
+                    <p style="font-family: 'gyugyu';">We source premium, responsibly made fabrics like 100% cotton and pure linen that meet high sustainability standards.</p>
                 </div>
             </div>
         </div>
@@ -66,42 +68,33 @@
 
 
 
-    <div class="d-flex justify-content-between align-items-center mt-3">
-        <div class="slider-container" style="width : 33%">
+    <div class="d-flex justify-content-between align-items-center mt-3 row ms-0 me-0 ps-0 pe-0">
+        <div class="slider-container col-md-3">
           <div class="slider">
-              {% for i in range(9) %}
+              {% for i in range(15) %}
                 {% for imgElement in certification %}
                     <div class="slide">
                         <img src="{{ imgElement.img }}">
                         <p>{{ imgElement.description | safe }}</p>
                     </div>
                 {% endfor %}
-                {% for imgElement in standard %}
-                    <div class="slide">
-                        <img src="{{ imgElement.img }}">
-                        <p>{{ imgElement.description | safe }}</p>
-                    </div>
-                {% endfor %}
               {% endfor %}
           </div>
         </div>
-        <div style="width : 33%">
-            <div class="marquee-container overflow-hidden bg-light shadow-sm">
+        <div class=" col-md-6 ">
+            <div class="marquee-container overflow-hidden bg-light border-start border-end">
               <div class="marquee-content d-flex align-items-center">
-                  {% for i in range(9) %}
-                      {% for imgElement in certification %}
-                        <img src="{{ imgElement.img }}" class="marquee-item px-4 py-2 rounded-pill mx-2" style="width : 15vh;">
-                      {% endfor %}
-                      {% for imgElement in standard %}
-                        <img src="{{ imgElement.img }}" class="marquee-item px-4 py-2 rounded-pill mx-2" style="width : 15vh;">
+                  {% for i in range(15) %}
+                      {% for imgElement in brands %}
+                        <img src="{{ imgElement.img }}" class="marquee-item px-4 py-2 rounded-pill mx-2" style="width : 22vh;">
                       {% endfor %}
                   {% endfor %}
               </div>
             </div>
         </div>
-        <div class="slider-container" style="width : 33%">
+        <div class="slider-container col-md-3">
           <div class="slider">
-              {% for i in range(9) %}
+              {% for i in range(15) %}
                 {% for imgElement in standard %}
                     <div class="slide">
                         <img src="{{ imgElement.img }}">
@@ -112,6 +105,9 @@
           </div>
         </div>
     </div>
+
+
+
 <style>
     .slider-container {
       height: 18vh; /* Adjust to your desired height - Experiment with this */
