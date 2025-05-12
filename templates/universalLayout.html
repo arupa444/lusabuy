@@ -262,7 +262,13 @@
   position: relative; /* Or absolute, fixed, or sticky */
   animation: mymove 3s;
 }
-  </style>
+
+.navbar-nav .nav-item {
+    margin-left: .85rem;
+    margin-right: .85rem;
+}
+
+</style>
 </head>
 
 <body>
@@ -355,6 +361,19 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active text-uppercase pt-0" aria-current="page" href="{{ url_for('lusaPrint.contactUs') }}">Contact</a>
+        </li>
+        <li class="nav-item lastNavEle">
+          <div class="d-flex sticky-top searchStick1 justify-content-center pt-2 pb-2" class="">
+            <!-- From Uiverse.io by vinodjangid07 -->
+                <a class="text-decoration-none text-dark me-2"  data-bs-toggle="modal" data-bs-target="#searchModal">
+                  <button class="searchButton text-uppercase">
+                    <svg class="svgIcon" viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    Explore
+                  </button>
+                </a>
+          </div>
         </li>
       </ul>
     </div>

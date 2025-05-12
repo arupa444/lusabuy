@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const navbar = document.querySelector('.navbar');
         const navbarNav = document.querySelector('#navbarNav');
         const inviBefore = document.querySelector('.inviBefore');
+        const lastNavEle = document.querySelector('.lastNavEle');
         const inviAfter = document.querySelector('.inviAfter');
         const navLink = document.querySelectorAll('.nav-link');
         const searchStick = document.querySelector('.searchStick');
@@ -11,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if( window.innerWidth > 992 ){
             navbar.classList.add('flex-column');
             searchStick.style.top = "0vh";
+            searchStick.classList.remove('d-none');
+            lastNavEle.classList.add('d-none');
             if (window.scrollY > 50) {
                 navbar.classList.add('d-flex');
                 navbar.classList.add('justify-content-center');
@@ -50,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             inviAfter.classList.add('d-none');
             searchStick.style.top = "10vh";
+            searchStick.classList.add('d-none');
+            lastNavEle.classList.remove('d-none');
         }
     }
     // Attach the scroll event listener
@@ -292,10 +297,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const theRemainingHomeVid93 = document.querySelectorAll(".upar3");
     const theHeight = document.querySelector('.navbar');
 
+
     if (theHeight) {
-        totalHeight = theHeight.scrollHeight; // Assign to the globally scoped variable
-        console.log("DOMContentLoaded totalHeight:", totalHeight);
-        contentContainer.style.marginTop = -totalHeight + "px";
+        if( window.innerWidth > 992 ){
+            totalHeight = theHeight.scrollHeight; // Assign to the globally scoped variable
+            console.log("DOMContentLoaded totalHeight:", totalHeight);
+            contentContainer.style.marginTop = -totalHeight + "px";
+        }
 
         const totalHeight1 = remainingHomeVid11[0].scrollHeight;
         const totalHeight2 = remainingHomeVid21[0].scrollHeight;
