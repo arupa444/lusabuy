@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, current_app, request, flash, json, g
 # flash is use as like as alert in js but in a different way like flashing a message on a specific point of a code
-from form import LusaContact, LusaSubscriber
+from form import LusaContact, LusaSubscriber, LusaContactInContactus
 # Fatch the data from the .py file name form.py
 app_bluePrint = Blueprint("lusaPrint", __name__)
 # the "lusaPrint use when you try to invoke a function using url_for method"
@@ -160,6 +160,5 @@ def blog():
 
 @app_bluePrint.route('/contactUs')
 def contactUs():
-    return render_template('contactUs.html', title='Contact Us')
-
-
+    contactUsForm = LusaContactInContactus()
+    return render_template('contactUs.html', title='Contact Us', contactUsForm=contactUsForm)

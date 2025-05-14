@@ -9,6 +9,12 @@
 * {
   box-sizing: border-box;
 }
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-size: 16px;
+}
 .lifeDark{
     background-color : var(--color-black) !important;
 }
@@ -51,11 +57,6 @@
 
 .searchStick {
     font-family: 'Saglity';
-}
-html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
 }
 body {
       margin: 0;
@@ -631,16 +632,11 @@ footer .mediaKit {
 
   .navbar-nav1 .nav-item {
     display: flex;
-    margin-left: 1.2rem;
-    margin-right: 1.2rem;
     align-items: center;
-
   }
 
   .justTheBelowOne .nav-item:not(:last-child)::after {
     content: "|";
-    margin-left: 1.2rem;
-    margin-right: 1.2rem;
   }
 }
 
@@ -834,3 +830,4 @@ footer {
     font-size: 1.2rem;
     color: #9c6d51;  /* A warm, muted tone */
 }
+

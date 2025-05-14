@@ -9,11 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const navLink = document.querySelectorAll('.nav-link');
         const searchStick = document.querySelector('.searchStick');
         const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
+        const blogPageJs = document.querySelector(".blogPage");
         if( window.innerWidth > 992 ){
             navbar.classList.add('flex-column');
             searchStick.style.top = "0vh";
             searchStick.classList.remove('d-none');
             lastNavEle.classList.add('d-none');
+            if(blogPageJs){
+                blogPageJs.classList.remove('flex-column');
+                blogPageJs.classList.add('m-5');
+                blogPageJs.classList.remove('m-2');
+            }
             if (window.scrollY > 50) {
                 navbar.classList.add('d-flex');
                 navbar.classList.add('justify-content-center');
@@ -46,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }else{
+            if(blogPageJs){
+                blogPageJs.classList.add('flex-column');
+                blogPageJs.classList.remove('m-5');
+                blogPageJs.classList.add('m-2');
+            }
             navbar.classList.remove('flex-column');
             navLink.forEach((ele)=>{
                 ele.classList.add('theColorForLusaNavBefore');
@@ -66,6 +77,7 @@ function lusaFooter() {
   let onWhenScreenStore = document.querySelectorAll(".onWhenScreen");
   let offWhenScreenStore = document.querySelectorAll(".offWhenScreen");
   let dropAfter415 = document.querySelectorAll(".dropdown-menu");
+  let allMsRemove = document.querySelectorAll(".allMsRemove");
 
   if (window.innerWidth <= 992) {
     // Small screen
@@ -135,6 +147,16 @@ function lusaFooter() {
     });
     offWhenScreenStore.forEach((ele) => {
       ele.classList.remove("d-none");
+    });
+  }
+
+  if (window.innerWidth <= 650) {
+    allMsRemove.forEach((ele)=>{
+        ele.classList.add("d-none");
+    });
+  }else{
+    allMsRemove.forEach((ele)=>{
+        ele.classList.remove("d-none");
     });
   }
 }
@@ -274,6 +296,7 @@ let totalHeight = 0; // Declare totalHeight in a wider scope.  Initialize to a d
 function blogOperations() {
   const theHeight = document.querySelector('.navbar');
   if (theHeight) {  // Check if the navbar element exists
+    let totalHeight = 0;
     totalHeight = theHeight.scrollHeight; // Update totalHeight
     console.log("blogOperations totalHeight:", totalHeight);
     const fbFeedForBlog = document.getElementById('facebook-feed-container');
@@ -299,11 +322,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     if (theHeight) {
-        if( window.innerWidth > 992 ){
+            totalHeight = 0;
             totalHeight = theHeight.scrollHeight; // Assign to the globally scoped variable
             console.log("DOMContentLoaded totalHeight:", totalHeight);
             contentContainer.style.marginTop = -totalHeight + "px";
-        }
+
 
         const totalHeight1 = remainingHomeVid11[0].scrollHeight;
         const totalHeight2 = remainingHomeVid21[0].scrollHeight;

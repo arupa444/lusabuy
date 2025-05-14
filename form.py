@@ -35,5 +35,18 @@ class LusaSubscriber(FlaskForm):
     name = StringField('Name *',
                         validators=[DataRequired()])
     message = TextAreaField('Message',
-                           validators=[DataRequired(), Length(min=20)])
+                           validators=[Length(min=20)])
     submit = SubmitField('Subscribe')
+
+
+class LusaContactInContactus(FlaskForm):
+    name = StringField('Name *', validators=[DataRequired()])
+    phNumber = StringField('Phone Number',
+                           validators=[Length(min=10, max=13)])
+    email = StringField('Email address *',
+                        validators=[DataRequired(), Email()])
+    subject = TextAreaField('Subject',
+                           validators=[Length(min=20)])
+    message = TextAreaField('Message',
+                           validators=[Length(min=20)])
+    submit = SubmitField('Send')
