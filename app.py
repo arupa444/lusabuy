@@ -13,4 +13,4 @@ app.config['SECRET_KEY'] = 'dc8ce0faf1677dfe9e71c52d5037428d'
 app.register_blueprint(app_bluePrint, url_prefix="/")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
