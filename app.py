@@ -1,6 +1,6 @@
 from flask import Flask
 from bluePrint import app_bluePrint
-from flask_pymongo import PyMongo
+# from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 

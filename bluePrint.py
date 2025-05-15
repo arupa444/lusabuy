@@ -5,10 +5,10 @@ from form import LusaContact, LusaSubscriber, LusaContactInContactus
 app_bluePrint = Blueprint("lusaPrint", __name__)
 # the "lusaPrint use when you try to invoke a function using url_for method"
 from datetime import datetime
-import pymongo
+# import pymongo
 from bson.objectid import ObjectId
 import os
-from bson import json_util
+# from bson import json_util
 
 certification = [
     {
@@ -119,21 +119,21 @@ brands = [
 # def before_request():
 #     g.db = current_app.config['db']
 
-def serialize_document(doc):
-    """Converts ObjectId to string in a MongoDB document."""
-    if isinstance(doc, dict):
-       for key, value in doc.items():
-          if isinstance(value, ObjectId):
-               doc[key] = str(value)
-          elif isinstance(value, dict):
-               serialize_document(value) # Recursive call for nested dicts
-          elif isinstance(value, list):
-             for i, item in enumerate(value):
-                if isinstance(item, dict):
-                    serialize_document(item) # recursive call for nested dicts in lists
-                elif isinstance(item, ObjectId):
-                   value[i]= str(item)
-    return doc
+# def serialize_document(doc):
+#     """Converts ObjectId to string in a MongoDB document."""
+#     if isinstance(doc, dict):
+#        for key, value in doc.items():
+#           if isinstance(value, ObjectId):
+#                doc[key] = str(value)
+#           elif isinstance(value, dict):
+#                serialize_document(value) # Recursive call for nested dicts
+#           elif isinstance(value, list):
+#              for i, item in enumerate(value):
+#                 if isinstance(item, dict):
+#                     serialize_document(item) # recursive call for nested dicts in lists
+#                 elif isinstance(item, ObjectId):
+#                    value[i]= str(item)
+#     return doc
 
 @app_bluePrint.context_processor
 def inject_globals():
