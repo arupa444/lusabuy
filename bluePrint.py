@@ -115,9 +115,9 @@ brands = [
     }
 ]
 
-@app_bluePrint.before_request
-def before_request():
-    g.db = current_app.config['db']
+# @app_bluePrint.before_request
+# def before_request():
+#     g.db = current_app.config['db']
 
 def serialize_document(doc):
     """Converts ObjectId to string in a MongoDB document."""
