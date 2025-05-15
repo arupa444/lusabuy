@@ -1,5 +1,4 @@
-Flask==3.0.2
-Flask-PyMongo==2.3.0
+Flask==3.1.1
+flask_wtf==1.2.2
 pymongo==4.7.0
-bson==0.5.10
-WTForms==3.1.2
+WTForms==3.2.1
