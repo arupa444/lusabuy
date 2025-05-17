@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() { // Ensure the DOM is 
                 });
             },
             {
-                threshold: 0.03 // Adjust threshold as needed
+                threshold: 0.3 // Adjust threshold as needed
             }
         );
 
