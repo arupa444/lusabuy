@@ -6,9 +6,9 @@
             <video autoplay muted playsinline loop class="lusa-video" style="width: 100%; height: 100vh; object-fit: cover;">
                 <source src="{{ url_for('static', filename='vid/lusabuyHome.mp4') }}" class="p-0 m-0" type="video/mp4">
             </video>
-            <div class="position-absolute d-flex flex-column align-items-center " style="width: 100%; height:100%; top: 70%">
+            <div class="position-absolute d-flex flex-column align-items-center" style="width: 100%; height:100%; top: 70%">
                 <h1 class="firstHomeVid fw-normal">Beyond The Runway</h1>
-                <a href="#" class="btn btn-outline-dark text-decoration-none" style="font-family: 'Kalesi'; font-size : 1.2rem;">Our Story</a>
+                <a href="#" class="btn btn-outline-dark text-decoration-none">Our Story</a>
             </div>
         </div>
         <div class="d-flex" style=" object-position: top left;">
@@ -45,7 +45,7 @@
                         <h1 class="d-flex justify-content-center">Sustainability</h1>
                     </div>
                     <div class="w-50 d-flex justify-content-center">
-                        <p class="d-flex justify-content-center w-50" style="font-family: 'gyugyu'; font-size : 1.3rem;">At Lusabuy, sustainability drives everything we do, from ethical sourcing to eco-friendly production. With SEDEX and Higg Index-certified factories, we ensure responsible and transparent practices. Join us in building a fashion supply chain that’s ethical, high-quality, and sustainable.</p>
+                        <p class="d-flex justify-content-center w-50">At Lusabuy, sustainability drives everything we do, from ethical sourcing to eco-friendly production. With SEDEX and Higg Index-certified factories, we ensure responsible and transparent practices. Join us in building a fashion supply chain that’s ethical, high-quality, and sustainable.</p>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="position-absolute upar3" style="width: 100%; height:100%;">
                 <div class="remainingHomeVid2 d-flex flex-column align-items-center blockText1">
                     <h1 class="materialLusa">Material</h1>
-                    <p style="font-family: 'gyugyu';">We source premium, responsibly made fabrics like 100% cotton and pure linen that meet high sustainability standards.</p>
+                    <p>We source premium, responsibly made fabrics like 100% cotton and pure linen that meet high sustainability standards.</p>
                 </div>
             </div>
         </div>
@@ -141,6 +141,111 @@
     }
     .navbar {
         background-color: transparent;
+    }
+
+
+
+
+<!--    1-->
+    .btn.btn-outline-dark { /* Target the button specifically */
+      font-family: 'Kalesi'; /* Keep the font family */
+      font-size: clamp(0.8rem, 2vw, 1rem); /* Adjust as needed */
+      line-height: 1.5; /* Standard line height for buttons */
+    }
+
+    @media (max-width: 768px) {
+      .btn.btn-outline-dark {
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* Slightly smaller on phones */
+      }
+    }
+
+
+
+
+
+
+<!--    2-->
+    .remainingHomeVid1 h1 {
+        font-family: 'Saglity';  /* Taking from your css for the rest of remainingHomeVid1 */
+        color: rgba(255, 255, 255, .5); /* Taking from your css for the rest of remainingHomeVid1 */
+        font-size: clamp(2rem, 6vw, 3rem); /* Adjust header size responsively */
+        line-height: 1.2;
+        text-align: center; /* Optional: Center the text */
+    }
+
+    .remainingHomeVid1 .btn.btn-outline-light {
+      font-family: 'Kalesi';
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .remainingHomeVid1 h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+        }
+
+      .remainingHomeVid1 .btn.btn-outline-light {
+        font-size: clamp(0.6rem, 3vw, .8rem); /* Smaller button text on phones */
+      }
+    }
+
+
+<!--    3-->
+
+    .upar2 .remainingHomeVid2 h1 {  /* Targeting specifically within .upar2 */
+        font-family: 'Saglity';   /* Taking from your css for the rest of remainingHomeVid1 */
+        color: rgba(255, 255, 255, .5);  /* Taking from your css for the rest of remainingHomeVid1 */
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .upar2 .remainingHomeVid2 p {   /* Targeting specifically within .upar2 */
+      font-family: 'gyugyu';
+      font-size: clamp(0.9rem, 2vw, 1.2rem); /* Adjust as needed */
+      line-height: 1.6; /* Important for readability */
+      text-align: center;  /* Consider centering on smaller screens */
+    }
+
+    @media (max-width: 768px) {
+      .upar2 .remainingHomeVid2 h1 {
+        font-size: clamp(1rem, 5vw, 2.5rem);
+      }
+
+      .upar2 .remainingHomeVid2 p {
+        font-size: clamp(0.4rem, 2vw, .6rem);
+      }
+    }
+
+<!--    4-->
+    .upar3 .remainingHomeVid2 h1.materialLusa {  /*Targeting specifically within upar3*/
+      font-family: 'Saglity'; /*Taking from your css*/
+      background: linear-gradient(to right,rgba(255, 255, 255, .5),rgba(255, 255, 255, .5),#000000,rgba(255, 255, 255, .5),rgba(255, 255, 255, .5)); /*Taking from your css*/
+        background-size: 200%;  /*Taking from your css*/
+        background-clip: text;  /*Taking from your css*/
+        -webkit-background-clip: text;  /*Taking from your css*/
+        -webkit-text-fill-color: transparent;  /*Taking from your css*/
+        animation: animate-gradient 5s linear infinite;  /*Taking from your css*/
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .upar3 .remainingHomeVid2 p {  /*Targeting specifically within upar3*/
+      font-family: 'gyugyu';
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .upar3 .remainingHomeVid2 h1.materialLusa {
+        font-size: clamp(1rem, 5vw, 2.5rem);
+      }
+
+      .upar3 .remainingHomeVid2 p {
+        font-size: clamp(0.4rem, 2vw, .6rem);
+      }
     }
 </style>
 

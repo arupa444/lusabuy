@@ -352,13 +352,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('scroll', blogOperations);
 window.addEventListener("resize", blogOperations);
+let noOfInsaPics = 0;
+if(window.innerWidth >= 640){
+    noOfInsaPics = 8;
+}else{
+    noOfInsaPics = 4;
+}
 
 var userFeed = new Instafeed({
     get: 'user',
     target: "instafeed-container",
     resolution: 'low_resolution',
     accessToken: 'IGAARe6tZAbYZCZABZAE9ldV9hM21reXN6TVU4bUdZAZAGtCMk02VmNRNmRwblBTSHRMZADFXdUxjUkFHWmRxUnNMeU5ETV80eVRTcTBzRWZATaGdTeXllMm5NR0J1bHRYSlRULTZAJVDNzOXBpd1llc0k5dEhIdkhJaHdaVXhTeHdDQlMyWQZDZD',
-    limit: 8,
+    limit: noOfInsaPics,
     template: '<div class="instafeed-item"><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></div>',
     after: function() {
     var container = document.getElementById('instafeed-container');
