@@ -15,6 +15,13 @@ html {
     min-height: 100%;
     font-size: 16px;
 }
+body {
+      margin: 0;
+      padding: 0;
+    min-height: 100%;
+    font-family: 'Didot';
+    background: #F8F9FA;
+}
 .lifeDark{
     background-color : var(--color-black) !important;
 }
@@ -58,16 +65,9 @@ html {
 .searchStick {
     font-family: 'Saglity';
 }
-body {
-      margin: 0;
-      padding: 0;
-    min-height: 100%;
-    font-family: 'Didot';
-    background: #F8F9FA;
-}
 
 .lusa-video {
-    width: 100%;
+    max-width: 100%;
     height: auto;
 
     display: block;
